@@ -14,7 +14,8 @@ mongoose.Promise = global.Promise;
 
 mongoose.connect('mongodb://localhost/disel', {
     useNewUrlParser: true, 
-    useFindAndModify: false
+    useFindAndModify: false,
+    useUnifiedTopology: true
 })
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
