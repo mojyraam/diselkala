@@ -1,0 +1,112 @@
+extends ../../../layout
+block append script
+block content
+    .container
+        form(method='POST' action='/rahsazimadani/excavator/hundai/save')
+            .containerinfo
+                .row.mt-2.mb-2
+                    .col-md-3.pr-5
+                        label(for="name") نام:
+                    .col-md-3.pl-5
+                        input#name.form-control(type="text" name="name" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
+                    .col-md-3.pr-5
+                        label(for="price") قیمت:
+                    .col-md-3.pl-5
+                        input#price.form-control(type="text" name="price" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
+                .row.mt-2.mb-2
+                    .col-md-3.pr-5
+                        label(for="branch") شاخه:
+                    .col-md-9.pl-5
+                        select#branch.form-control(name="branch" required)
+                            each item in branch
+                                option(value=item.code) #{item.name}
+                .row.mt-2.mb-2
+                    .col-md-3.pr-5
+                        label(for="description") توضیحات:
+                    .col-md-9.pl-5
+                        textarea#description.form-control(name="description" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="2000")
+            br
+            .containerinfo
+                .row.mt-4.mb-4
+                    .col-md-3.pr-5
+                        label(for="blocksilandr") بلوک سیلندر:
+                    .col-md-3.pl-5
+                        input#blocksilandr.form-control(type="text" name="blocksilandr" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
+                    .col-md-3.pr-5
+                        label(for="silandr") سیلندر:
+                    .col-md-3.pl-5
+                        input#silandr.form-control(type="text" name="silandr" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
+                .row.mt-4.mb-4
+                    .col-md-3.pr-5
+                        label(for="sarsilandr") سر سیلندر:
+                    .col-md-3.pl-5
+                        input#sarsilandr.form-control(type="text" name="sarsilandr" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
+                    .col-md-3.pr-5
+                        label(for="millang") میل لنگ:
+                    .col-md-3.pl-5
+                        input#millang.form-control(type="text" name="millang" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
+                .row.mt-4.mb-4
+                    .col-md-3.pr-5
+                        label(for="milsupap") میل سوپاپ:
+                    .col-md-3.pl-5
+                        input#milsupap.form-control(type="text" name="milsupap" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
+                    .col-md-3.pr-5
+                        label(for="bush") بوش:
+                    .col-md-3.pl-5
+                        input#bush.form-control(type="text" name="bush" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
+                .row.mt-4.mb-4
+                    .col-md-3.pr-5
+                        label(for="ring") رینگ:
+                    .col-md-3.pl-5
+                        input#ring.form-control(type="text" name="ring" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
+                    .col-md-3.pr-5
+                        label(for="yataghan") یاطاقان:
+                    .col-md-3.pl-5
+                        input#yataghan.form-control(type="text" name="yataghan" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
+                .row.mt-4.mb-4
+                    .col-md-3.pr-5
+                        label(for="supap") سوپاپ:
+                    .col-md-3.pl-5
+                        input#supap.form-control(type="text" name="supap" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
+                    .col-md-3.pr-5
+                        label(for="seat") سیت:
+                    .col-md-3.pl-5
+                        input#seat.form-control(type="text" name="seat" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
+                .row.mt-4.mb-4
+                    .col-md-3.pr-5
+                        label(for="gate") گیت:
+                    .col-md-3.pl-5
+                        input#gate.form-control(type="text" name="gate" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
+                    .col-md-3.pr-5
+                        label(for="waterpomp") واترپمپ:
+                    .col-md-3.pl-5
+                        input#waterpomp.form-control(type="text" name="waterpomp" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
+                .row.mt-4.mb-4
+                    .col-md-3.pr-5
+                        label(for="oilpomp") اویل پمپ:
+                    .col-md-3.pl-5
+                        input#oilpomp.form-control(type="text" name="oilpomp" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
+                    .col-md-3.pr-5
+                        label(for="washerkamel") واشر کامل:
+                    .col-md-3.pl-5
+                        input#washerkamel.form-control(type="text" name="washerkamel" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
+                .row.mt-4.mb-4
+                    .col-md-3.pr-5
+                        label(for="washersarsilandr") واشر سر سیلندر:
+                    .col-md-3.pl-5
+                        input#washersarsilandr.form-control(type="text" name="washersarsilandr" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
+                    .col-md-3.pr-5
+                        label(for="washercartel") واشر کارتل:
+                    .col-md-3.pl-5
+                        input#washercartel.form-control(type="text" name="washercartel" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
+                .row.mt-4.mb-4
+                    .col-md-3.pr-5
+                        label(for="asbakdudohava") اسبک دود و هوا:
+                    .col-md-3.pl-5
+                        input#asbakdudohava.form-control(type="text" name="asbakdudohava" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
+            .row.txt-center.mt-4
+                .col-md-8.mt-3
+                    a.btn.ml-4.btn-warning.linkbutton(href='/products') نمایش محصولات
+                    button.btn.btn-success.linkbutton(type="submit") ذخیره
+            script.
+                console.log(!{JSON.stringify(branch)})

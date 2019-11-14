@@ -1,0 +1,89 @@
+extends layout
+block append script
+block content
+  if (!user)
+    .row.text-center
+      p.welcome میهمان گرامی خوش آمدید
+    .row
+      .col-md-1
+        .user
+          img#user(src='/images/user.png')
+          .userform.dropdown-menu.bg-warning.w-75.ml-5.pr-2
+            ul#loginlist
+              li.p-2
+                .row
+                  .col-md-3
+                    a.btn.menuitem(href='/users/login') ورود
+              li.p-2
+                .row
+                  .col-md-3
+                    a.btn.menuitem(href='/users/register') ایجاد
+  else
+    .row.text-center
+      p.welcome کاربر گرامی #{user.username} خوش آمدید
+    .row
+      .col-md-1
+        .user
+          img#user(src='/images/user.png')
+          .userform.dropdown-menu.bg-warning.w-75.ml-5.pr-2
+            ul#loginlist
+              li.p-2
+                .row
+                  .col-md-3
+                    a.btn.menuitem(href='/users/logout') خروج
+                  script.
+                    console.log(user)
+                    console.log(!{JSON.stringify(req)})
+  .container
+    if success_msg != null
+      each item in success_msg
+        .alert.alert-success.alert-dismissible.fade.show(role='alert')
+          p(style='text-align: center;') #{item}
+          button.close(type='button' data-dismiss='alert' aria-label='Close')
+            span(aria-hidden='true') &times;
+    if error_msg != null
+      each item in error_msg
+        .alert.alert-danger.alert-dismissible.fade.show(role='alert')
+          p(style='text-align: center;') #{item}
+          button.close(type='button' data-dismiss='alert' aria-label='Close')
+            span(aria-hidden='true') &times;
+    if error != null
+      each item in error
+        .alert.alert-warning.alert-dismissible.fade.show(role='alert')
+          p(style='text-align: center;') #{item}
+          button.close(type='button' data-dismiss='alert' aria-label='Close')
+            span(aria-hidden='true') &times;
+    #demo.carousel.slide(data-ride='carousel')
+      // Indicators
+      ul.carousel-indicators
+        li.active(data-target='#demo' data-slide-to='0')
+        li(data-target='#demo' data-slide-to='1')
+        li(data-target='#demo' data-slide-to='2')
+      // The slideshow
+      .carousel-inner
+        .carousel-item.active
+          #carousel1
+            p asdasfsdfgsdfsdfdsfsd
+        .carousel-item
+          #carousel2
+            p asdasfsdfgsdfsdfdsfsd
+        .carousel-item
+          #carousel3
+            p asdasfsdfgsdfsdfdsfsd
+      // Left and right controls
+      a.carousel-control-prev(href='#demo' data-slide='prev')
+        span.carousel-control-prev-icon
+      a.carousel-control-next(href='#demo' data-slide='next')
+        span.carousel-control-next-icon
+  br
+  .container
+    ul#products
+      a#producta(href='/rahsazimadani') ماشین آلات راهسازی و معدنی
+      a#productb ماشین آلات حمل و نقل جاده ای و ترابری
+      a#productc دیزل ژنراتور (مولد برق)
+      a#productd کمپرسور
+  br
+  .container
+    p welcome to my store
+    a.menuitem(href='/products') Products
+  

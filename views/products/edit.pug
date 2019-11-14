@@ -1,0 +1,24 @@
+extends ../layout
+block append script
+block content
+  .container
+    .containeredit
+      form(action='/products/update/'+ product._id method='post')
+        .row.mt-2.mb-2
+          .col-md-4
+            label(for="name" style="margin-left: 40%;") Product Name:
+          .col-md-4
+            input#name.form-control(type="text" name="name" required="is required" value= product.name)
+        .row.mt-2.mb-2
+          .col-md-4
+            label(for="description" style="margin-left: 40%;") Product Description:
+          .col-md-4
+            input#description.form-control(type="text" name="description" required="is required" value= product.description)
+        .row.mt-2.mb-2
+          .col-md-4
+            label(for="price" style="margin-left: 40%;") Product Price:
+          .col-md-4
+            input#price.form-control(type="text" name="price" required="is required" value= product.price)
+        .row.mt-3(style='margin-left: 30%; text-align: center;')
+            a.btn-warning.linkbutton.mt-3(href='/products' style="margin-right: 2%;") Products List
+            button.btn-success.linkbutton.mt-3(type="submit" style="margin-left: 2%;") Update

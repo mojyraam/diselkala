@@ -1,0 +1,23 @@
+extends ../layout
+block append script
+block content
+  .container
+    form(method='POST' action='/products/save')
+      .row.mt-2.mb-2
+        .col-md-4
+          label(for="name" style="margin-left: 60%; user-select: none;") Product Name:
+        .col-md-4
+          input#name.form-control(type="text" name="name" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
+      .row.mt-2.mb-2
+        .col-md-4
+          label(for="description" style="margin-left: 60%; user-select: none;") Product Description:
+        .col-md-4
+          input#description.form-control(type="text" name="description" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
+      .row.mt-2.mb-2
+        .col-md-4
+          label(for="price" style="margin-left: 60%; user-select: none;") Product Price:
+        .col-md-4
+          input#price.form-control(type="text" name="price" required="is required" oninvalid="this.setCustomValidity('Please Enter Only Numbers')" oninput="setCustomValidity('')")
+      .row(style='margin-left: 35%; text-align: center;')
+          a.btn-warning.linkbutton(href='/products' style="margin-right: 2%;") products list
+          button.btn-success.linkbutton(type="submit" style="margin-left: 2%;") save

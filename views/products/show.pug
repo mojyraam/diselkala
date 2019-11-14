@@ -1,0 +1,33 @@
+extends ../layout
+block append script
+block content
+  .container
+    h2 
+      p Item Details
+    .containerinfo
+      .row
+        .col-md-3
+          label Product Name: 
+        .col-md-3
+          p #{product.name}
+          hr
+        .col-md-3
+        .col-md-3
+          .row(style='text-align: center;')
+            a.btn-warning.linkbutton(href='/products/edit/'+product._id style='margin-left: 7%;') Edit
+      .row
+        .col-md-3
+          label Product Description:
+        .col-md-3
+          p #{product.description}
+          hr
+      .row
+        .col-md-3
+          label Product Price
+        .col-md-3
+          p #{product.price}$
+          hr
+        .col-md-3
+        .col-md-3
+          .row(style='text-align: center;')
+            a.btn-info.linkbutton(href='/products' style='margin-left: 7%;') Back

@@ -1,0 +1,280 @@
+body {
+  /* background-image: url(/images/cinema.jpg); */
+  font: 20px Tahoma;
+  padding: 7%;
+  font-weight: 100;
+  opacity: 0.9;
+  direction: rtl;
+  background-color: rgb(234, 255, 255) !important;
+}
+
+a {
+  color: #00B7FF;
+}
+
+p {
+  color: gray;
+}
+
+.navbar {
+  margin-top: 2%;
+  user-select: none;
+  width: 90%;
+  margin-left: 5%;
+  background-color: rgb(252, 233, 250);
+  border-radius: 7px;
+  border: 2px solid rgb(170, 207, 255);
+}
+
+.navlink {
+  color: gray;
+}
+
+.navlink:hover {
+  color: red;
+}
+
+.navlinklistitem {
+  background-color: rgb(255, 251, 217);
+  margin: 10px;
+  border-radius: 5px;
+  transition: background-color .5s;
+}
+
+.navlinklistitem:hover {
+  background-color: rgb(207, 241, 207);
+  color: plum;
+  transition: background-color .5s;
+}
+
+.bodycolor {
+  background-color: rgb(248, 244, 255);
+}
+
+.container { 
+  border: 1px solid rgb(235, 234, 250);
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  padding: 30px;
+}
+
+.menuitem {
+  color: rgb(247, 247, 162);
+  background-color: gray;
+  border-radius: 5px;
+  padding: 3px;
+  user-select: none;
+  transition: background-color .5s;
+}
+
+.menuitem:hover {
+  color: white;
+  background-color: pink;
+  text-decoration: none;
+}
+
+th {
+  border: none !important;
+  color: purple;
+}
+
+td {
+  border: 2px dashed rgb(218, 110, 185) !important;
+  transition: background-color .5s;
+  color: gray;
+}
+
+td:hover {
+  background-color: bisque;
+  cursor: pointer;
+  transition: background-color .5s;
+}
+
+td, th {
+  user-select: none;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 50px;
+  user-select: none;
+}
+
+.linkbutton {
+  padding: 10px;
+  text-decoration: none !important;
+  transition: background-color .5s;
+  border-radius: 5px;
+  border: none !important;
+  width: 150px;
+  color: white !important;
+  user-select: none;
+}
+
+.linkbutton:hover {
+  background-color: pink !important;
+  border: none !important;
+}
+
+#sym {
+  font-size: 50px;
+  font-style: normal;
+  font-weight: bold;
+  transform: scale(1, -1);
+  color: rgb(183, 219, 185);
+  margin-top: -5%;
+  margin-right: 5%;
+}
+
+.containerinfo {
+  background-color: rgb(216, 232, 238);
+  padding: 3%;
+  width: 80%;
+  margin-right: 10%;
+  border-radius: 5px;
+}
+
+.containerdetail {
+  background-color: rgb(238, 216, 230);
+  padding: 3%;
+  width: 80%;
+  margin-right: 10%;
+  border-radius: 5px;
+}
+
+.containeredit {
+  background-color: rgb(255, 242, 205);
+  padding: 3%;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 3%;
+  border-radius: 5px;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  right: 100%;
+  margin-top: -1px;
+}
+
+.dropdown-menu {
+  width: 300px !important;
+  text-align: right !important;
+} 
+
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  right: 100%;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+
+#carousel1 {
+  background-image: url(/images/1.jpg);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-color: rgba(255, 247, 220, 0.9);
+  margin: auto;
+  border-radius: 5px;
+  width: 1200px;
+  height: 500px;
+}
+
+#carousel2 {
+  background-image: url(/images/2.jpg);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-color: rgba(255, 247, 220, 0.9);
+  margin: auto;
+  border-radius: 5px;
+  width: 1200px;
+  height: 500px;
+}
+
+#carousel3 {
+  background-image: url(/images/3.jpg);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-color: rgba(255, 247, 220, 0.9);
+  border-radius: 5px;
+  width: 1200px;
+  height: 500px;
+  margin: auto;
+}
+
+img#user {
+  border-radius: 50%;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 20%;
+  margin-left: 20%;
+}
+
+img#user:hover {
+  opacity: 0.5;
+}
+
+.userform {
+  display: none;
+  background-color: rgb(255, 255, 228) !important;
+}
+
+#products {
+  text-align: center;
+  list-style: none;
+}
+
+#products a {
+  display: inline-block;
+  margin: 12px;
+  padding: 10px;
+  width: 300px;
+  height: 300px;
+  border-radius: 4px;
+  border: 1px solid #880E4F;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+  cursor: pointer;
+  color: #880E4F;
+  text-decoration: none;
+}
+
+#producta {
+  background-image: url(/images/3.jpg);
+  background-blend-mode: lighten;
+  background-color: rgba(249, 255, 220, 0.7);
+  background-size: cover;
+  transition: .5s;
+}
+
+#producta:hover {
+  background-image: url(/images/view.jpg);
+  background-blend-mode: lighten;
+  background-color: rgba(255, 247, 220, 0.9);
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 3px 7px 15px gray inset;
+  transition: .5s;
+}
+
+#loginlist li {
+  list-style: none;
+}
+
+.welcome {
+  background-color: rgb(210, 236, 210);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.welcome:hover {
+  background-color: rgb(210, 233, 236);
+}

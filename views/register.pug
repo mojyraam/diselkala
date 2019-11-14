@@ -1,0 +1,41 @@
+extends layout
+block append script
+block content
+  .container(style='text-align: center;')
+    form(method='post' action='/users/register')
+      label.mb-3.text-success ایجاد حساب کاربری
+      if e != null
+        each item in e
+          .alert.alert-warning.alert-dismissible.fade.show(role='alert')
+            p #{item.msg}
+            button.close(type='button' data-dismiss='alert' aria-label='Close')
+              span(aria-hidden='true') &times;        
+      .containerplace
+        .row.mt-3.ml-5
+          .col-md-5
+          .col-md-3
+            input#name.form-control(type='text', name='name', placeholder='نام', value= n)
+        .row.mt-3.ml-5
+          .col-md-5
+          .col-md-3
+            input#family.form-control(type='text', name='family', placeholder='نام خانوادگی', value= f)
+        .row.mt-3.ml-5
+          .col-md-5
+          .col-md-3
+            input#username.form-control(type='text', name='username', placeholder='نام کاربری', value= u)
+        .row.mt-3.ml-5
+          .col-md-5
+          .col-md-3
+            input#email.form-control(type='text', name='email', placeholder='ایمیل', value= m)
+        .row.mt-3.ml-5
+          .col-md-5
+          .col-md-3
+            input#password.form-control(type='text', name='password', placeholder='کلمه عبور', value= p)
+        .row.mt-3.ml-5
+          .col-md-5
+          .col-md-3
+            input#rpassword.form-control(type='text', name='rpassword', placeholder='تکرار کلمه عبور', value= rp)
+        .row.mt-3.ml-5
+          .col-md-5
+          .col-md-3
+            button.btn.btn-success ایجاد

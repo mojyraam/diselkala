@@ -1,0 +1,134 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="stylesheet", href='/stylesheets/bootstrap.min.css')
+    block script
+      script(src='./javascripts/jquery-3.4.1.min.js')
+      script(src='./javascripts/bootstrap.min.js')
+      script(src='./javascripts/test-script.js')
+
+  body.bodycolor
+    block content
+    nav.navbar.navbar-expand-md.fixed-top.mr-5
+      //a.navbar-dark.navbar-brand.navlink(href='#') Navbar
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarsExampleDefault.collapse.navbar-collapse
+        ul.navbar-nav
+          li.nav-item.active
+            a.nav-link.navlink(href='/')
+              | صفحه اصلی 
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link.navlink(href='#') درباره ما
+          li.nav-item
+            a.nav-link.navlink(href='#') راهنما
+          li.nav-item
+          .dropdown
+            a.nav-link.navlink.dropdown-toggle(href='#' data-toggle='dropdown') محصولات
+            ul.dropdown-menu(role="menu" aria-labelledby="dLabel")
+              li.dropdown-submenu
+                a.nav-link.navlink.navlinklistitem(href='#') ماشین آلات راهسازی و معدنی
+                ul.dropdown-menu(role="menu" aria-labelledby="dLabel")
+                  li.dropdown-submenu
+                    a.nav-link.navlink.navlinklistitem(href='#') بیل مکانیکی
+                    ul.dropdown-menu
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') هیوندای
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') کوماتسو
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') زوملاین
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') هپکو
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') لیوگانگ
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') چانگلین
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') XCMG
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') دلتا
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') فوتون
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') هلیکو
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') LG
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') سانوارد
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') تیراژه ماشین
+                      li.divider
+                  li.dropdown-submenu
+                    a.nav-link.navlink.navlinklistitem(href='#') لودر
+                    ul.dropdown-menu
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') هیوندای
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') دلتا
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') هپکو
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') هلیکو
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') نیوهلند
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') XCMG
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') کوماتسو
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') چانگلین
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') دوسان
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') LG
+                  li.dropdown-submenu
+                    a.nav-link.navlink.navlinklistitem.test(href='#') گریدر 
+                  li.dropdown-submenu
+                    a.nav-link.navlink.navlinklistitem.test(href='#') غلطک 
+                  li.dropdown-submenu
+                    a.nav-link.navlink.navlinklistitem.test(href='#') دامپتراک 
+                  li.dropdown-submenu
+                    a.nav-link.navlink.navlinklistitem.test(href='#') بیلبکهو 
+                    ul.dropdown-menu
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') 3rd level dropdown
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') 3rd level dropdown
+              li.dropdown-submenu
+                a.nav-link.navlink.test.navlinklistitem(href='#') ماشین آلات حمل و نقل جاده ای و ترابری 
+                ul.dropdown-menu(role="menu" aria-labelledby="dLabel")
+                  li
+                    a.nav-link.navlink.navlinklistitem(href='#') 2nd level dropdown
+                  li
+                    a.nav-link.navlink.navlinklistitem(href='#') 2nd level dropdown
+                  li.dropdown-submenu
+                    a.nav-link.navlink.navlinklistitem.test(href='#') Another dropdown 
+                      span.caret
+                    ul.dropdown-menu
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') 3rd level dropdown
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') 3rd level dropdown
+              li.dropdown-submenu
+                a.nav-link.navlink.test.navlinklistitem(href='#') دیزل ژنراتور (مولد برق)  
+                ul.dropdown-menu(role="menu" aria-labelledby="dLabel")
+                  li
+                    a.nav-link.navlink.navlinklistitem(href='#') 2nd level dropdown
+                  li
+                    a.nav-link.navlink.navlinklistitem(href='#') 2nd level dropdown
+                  li.dropdown-submenu
+                    a.nav-link.navlink.navlinklistitem.test(href='#') Another dropdown 
+                      span.caret
+                    ul.dropdown-menu
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') 3rd level dropdown
+                      li
+                        a.nav-link.navlink.navlinklistitem(href='#') 3rd level dropdown
+              li.dropdown-submenu
+                a.nav-link.navlink.test.navlinklistitem(href='#') کمپرسور
+        //- form.form-inline.my-2.my-lg-0
+        //-   input.form-control.mr-sm-2(type='text', placeholder='Search', aria-label='Search')
+        //-   button.btn-info.linkbutton(type='submit' style='width: 100px; height: 35px; padding: 5px;') Search

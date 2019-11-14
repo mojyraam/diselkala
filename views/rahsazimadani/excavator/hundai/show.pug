@@ -1,0 +1,69 @@
+extends ../../../layout
+block append script
+block content
+    .container
+        .col-md-3
+            p.text-center.mb-5.mr-5.p-4.rounded.text-info نمایش محصول
+        .containerinfo
+            .row.mt-5
+                .col-md-3
+                    label نام محصول: 
+                .col-md-3
+                    p #{product.name}
+                hr
+                .col-md-3
+                    label قیمت:
+                .col-md-3
+                    p #{product.price} تومان
+                hr
+            .row
+                .col-md-3
+                    label شاخه:
+                .col-md-3
+                    p #{product.productbranch}
+                hr
+            .row
+                .col-md-3
+                    label توضیحات:
+                .col-md-3
+                    p #{product.description}
+                hr
+        br
+        .containerdetail
+            .row.mt-5
+                .col-md-3
+                    label بلوک سیلندر:
+                .col-md-3
+                    p #{product.blocksilandr}
+                hr
+                .col-md-3
+                    label سیلندر:
+                .col-md-3
+                    p #{product.silandr}
+                hr
+            .row.mt-5
+                .col-md-3
+                    label سر سیلندر:
+                .col-md-3
+                    p #{product.sarsilandr}
+                hr
+                .col-md-3
+                    label میل لنگ:
+                .col-md-3
+                    p #{product.millang}
+                hr
+            .row.mt-5
+                .col-md-3
+                    label سر سیلندر:
+                .col-md-3
+                    p #{product.sarsilandr}
+                hr
+                .col-md-3
+                    label میل لنگ:
+                .col-md-3
+                    p #{product.millang}
+                hr
+        .row.mt-5
+            .col-md-8
+                a.btn.btn-info.linkbutton.ml-2(href='/rahsazimadani/excavator/hundai') بازگشت
+                a.btn.btn-warning.linkbutton(href='/products/edit/'+product._id) ویرایش
