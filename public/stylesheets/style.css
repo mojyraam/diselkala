@@ -30,13 +30,18 @@ p {
   color: gray;
 }
 
+.navlink1 {
+  color: gray;
+  font-size: 10px;
+}
+
 .navlink:hover {
   color: red;
 }
 
 .navlinklistitem {
   background-color: rgb(255, 251, 217);
-  margin: 10px;
+  margin: 5px;
   border-radius: 5px;
   transition: background-color .5s;
 }

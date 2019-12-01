@@ -1,7 +1,41 @@
 extends layout
 block append script
 block content
-  if (!user)
+  if (user === 1)
+    .row.text-center
+      p.welcome کاربر گرامی خوش آمدید
+    .row
+      .col-md-1
+        .user
+          img#user(src='/images/user.png')
+          .userform.dropdown-menu.bg-warning.w-75.ml-5.pr-2
+            ul#loginlist
+              li.p-2
+                .row
+                  .col-md-3
+                    a.btn.menuitem(href='/users/logout') خروج
+          script.
+            console.log(!{JSON.stringify(admin)})
+  else if (user === 2)
+    .row.text-center
+      p.welcome مدیر گرامی خوش آمدید
+    .row
+      .col-md-1
+        .user
+          img#user(src='/images/user.png')
+          .userform.dropdown-menu.bg-warning.w-75.ml-5.pr-2
+            ul#loginlist
+              li.mt-2.mb-2
+                .row
+                  .col-md-3
+                    a.btn.menuitem(href='/rahsazimadani/excavator/hundai') کارتابل
+              li.p-2
+                .row
+                  .col-md-3
+                    a.btn.menuitem(href='/users/logout') خروج
+          script.
+            console.log(!{JSON.stringify(admin)})
+  else
     .row.text-center
       p.welcome میهمان گرامی خوش آمدید
     .row
@@ -18,22 +52,6 @@ block content
                 .row
                   .col-md-3
                     a.btn.menuitem(href='/users/register') ایجاد
-  else
-    .row.text-center
-      p.welcome کاربر گرامی #{user.username} خوش آمدید
-    .row
-      .col-md-1
-        .user
-          img#user(src='/images/user.png')
-          .userform.dropdown-menu.bg-warning.w-75.ml-5.pr-2
-            ul#loginlist
-              li.p-2
-                .row
-                  .col-md-3
-                    a.btn.menuitem(href='/users/logout') خروج
-                  script.
-                    console.log(user)
-                    console.log(!{JSON.stringify(req)})
   .container
     if success_msg != null
       each item in success_msg
