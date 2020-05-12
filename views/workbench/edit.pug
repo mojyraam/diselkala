@@ -1,0 +1,107 @@
+extends ../layout
+block append script
+block content
+	.container
+		form(method='post' action='/workbench/update/'+ product._id)
+			.containeredit(style="margin-right: 100px;")
+				.row.mt-2.mb-2.ml-5
+					.col-md-3
+						label(for="name") نام محصول:
+					.col-md-3
+						input#name.form-control(type="text" name="name" required="is required" value= product.name)
+					.col-md-3
+						label(for="description") توضیحات:
+					.col-md-3
+						input#description.form-control(type="text" name="description" required="is required" value= product.description)
+				.row.mt-2.mb-2.ml-5
+					.col-md-3
+						label(for="price") قیمت:
+					.col-md-3
+						input#price.form-control(type="text" name="price" required="is required" value= product.price)
+					.col-md-3
+						label(for="branch") شاخه:
+					.col-md-3
+						input#name.form-control(type="text" name="name" required="is required" disabled value= product.productbranch)
+						script.
+							console.log(!{JSON.stringify(product)})
+			.containereditdetail(style="margin-right: 100px;")
+				.row.mt-2.mb-2.ml-5
+					.col-md-3
+						label(for="blocksilandr") بلوک سیلندر:
+					.col-md-3
+						input#blocksilandr.form-control(type="text" name="blocksilandr" required="is required" value= product.blocksilandr)
+					.col-md-3
+						label(for="silandr") سیلندر:
+					.col-md-3
+						input#silandr.form-control(type="text" name="silandr" required="is required" value= product.silandr)
+				.row.mt-2.mb-2.ml-5
+					.col-md-3
+						label(for="sarsilandr") سر سیلندر:
+					.col-md-3
+						input#sarsilandr.form-control(type="text" name="sarsilandr" required="is required" value= product.sarsilandr)
+					.col-md-3
+						label(for="millang") میل لنگ:
+					.col-md-3
+						input#millang.form-control(type="text" name="millang" required="is required" value= product.millang)
+				.row.mt-2.mb-2.ml-5
+					.col-md-3
+						label(for="milsupap") میل سوپاپ:
+					.col-md-3
+						input#milsupap.form-control(type="text" name="milsupap" required="is required" value= product.milsupap)
+					.col-md-3
+						label(for="bush") بوش:
+					.col-md-3
+						input#bush.form-control(type="text" name="bush" required="is required" value= product.bush)
+				.row.mt-2.mb-2.ml-5
+					.col-md-3
+						label(for="ring") رینگ:
+					.col-md-3
+						input#ring.form-control(type="text" name="ring" required="is required" value= product.ring)
+					.col-md-3
+						label(for="yataghan") یاطاقان:
+					.col-md-3
+						input#yataghan.form-control(type="text" name="yataghan" required="is required" value= product.yataghan)
+				.row.mt-2.mb-2.ml-5
+					.col-md-3
+						label(for="supap") سوپاپ:
+					.col-md-3
+						input#supap.form-control(type="text" name="supap" required="is required" value= product.supap)
+					.col-md-3
+						label(for="seat") سیت:
+					.col-md-3
+						input#seat.form-control(type="text" name="seat" required="is required" value= product.seat)
+				.row.mt-2.mb-2.ml-5
+					.col-md-3
+						label(for="gate") گیت:
+					.col-md-3
+						input#gate.form-control(type="text" name="gate" required="is required" value= product.gate)
+					.col-md-3
+						label(for="waterpomp") واترپمپ:
+					.col-md-3
+						input#waterpomp.form-control(type="text" name="waterpomp" required="is required" value= product.waterpomp)
+				.row.mt-2.mb-2.ml-5
+					.col-md-3
+						label(for="oilpomp") اویل پمپ:
+					.col-md-3
+						input#oilpomp.form-control(type="text" name="oilpomp" required="is required" value= product.oilpomp)
+					.col-md-3
+						label(for="washerkamel") واشر کامل:
+					.col-md-3
+						input#washerkamel.form-control(type="text" name="washerkamel" required="is required" value= product.washerkamel)
+				.row.mt-2.mb-2.ml-5
+					.col-md-3
+						label(for="washersarsilandr") واشر سر سیلندر:
+					.col-md-3
+						input#washersarsilandr.form-control(type="text" name="washersarsilandr" required="is required" value= product.washersarsilandr)
+					.col-md-3
+						label(for="washercartel") واشر کارتل:
+					.col-md-3
+						input#washercartel.form-control(type="text" name="washercartel" required="is required" value= product.washerkartel)
+				.row.mt-2.mb-2.ml-5
+					.col-md-3
+						label(for="asbakdudohava") اسبک دود و هوا:
+					.col-md-3
+						input#asbakdudohava.form-control(type="text" name="asbakdudohava" required="is required" value= product.asbakdudohava)
+			.row.mt-3(style='margin-right: 30%; text-align: center;')
+				a.btn-warning.linkbutton.mt-3(href='/workbench/index' style="margin-left: 2%;") Products List
+				button.btn-success.linkbutton.mt-3(type="submit" style="margin-left: 2%;") Update

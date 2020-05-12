@@ -1,8 +1,8 @@
-extends ../../../layout
+extends ../layout
 block append script
 block content
     .container
-        form(method='POST' action='/rahsazimadani/excavator/hundai/save')
+        form(method='POST' action='/workbench/save')
             .containerinfo
                 .row.mt-2.mb-2
                     .col-md-3.pr-5
@@ -106,7 +106,7 @@ block content
                         input#asbakdudohava.form-control(type="text" name="asbakdudohava" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
             .row.txt-center.mt-4
                 .col-md-8.mt-3
-                    a.btn.ml-4.btn-warning.linkbutton(href='/products') نمایش محصولات
+                    a.btn.ml-4.btn-warning.linkbutton(href='/workbench/index') نمایش محصولات
                     button.btn.btn-success.linkbutton(type="submit") ذخیره
             script.
                 console.log(!{JSON.stringify(branch)})

@@ -1,6 +1,5 @@
 var express = require('express')
 var router = express.Router()
-var rahsazi = require('../controllers/RahsazimadaniController')
 
 /* GET home page. */
 router.get('/', function(req, res, next) { 
@@ -11,27 +10,6 @@ router.get('/excavator', function(req, res, next) {
     res.render('rahsazimadani/excavator/excavator')
 })
 
-router.get('/excavator/hundai', function(req, res, next) { 
-    rahsazi.list(req, res)
-    // res.render('rahsazimadani/excavator/hundai', {
-    //     product: product
-    // })
-})
-
-router.get('/excavator/hundai/show/:id', (req, res) => {
-    rahsazi.show(req, res)
-})
-
-router.get('/excavator/hundai/create', (req, res, next) => { 
-    rahsazi.create(req, res)
-    // res.render('rahsazimadani/excavator/hundai', {
-    //     product: product
-    // })
-})
-
-router.post('/excavator/hundai/save', (req, res) => {
-    rahsazi.save(req, res)
-})
 
 
 

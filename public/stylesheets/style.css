@@ -156,6 +156,15 @@ td, th {
   border-radius: 5px;
 }
 
+.containereditdetail {
+  background-color: rgb(205, 255, 213);
+  padding: 3%;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 3%;
+  border-radius: 5px;
+}
+
 .dropdown-submenu {
   position: relative;
 }
@@ -255,6 +264,14 @@ img#user:hover {
 #producta {
   background-image: url(/images/3.jpg);
   background-blend-mode: lighten;
+  background-color: rgba(249, 255, 220, 0.7);
+  background-size: cover;
+  transition: .5s;
+}
+
+#productb {
+  background-image: url(https://imgur.com/download/6RGRabd);
+   background-blend-mode: lighten;
   background-color: rgba(249, 255, 220, 0.7);
   background-size: cover;
   transition: .5s;

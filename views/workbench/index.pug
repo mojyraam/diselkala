@@ -1,4 +1,4 @@
-extends ../../../layout
+extends ../layout
 block append script
 block content
   .container
@@ -15,15 +15,15 @@ block content
           td #{item.price}$
           td
             form(action='/products/delete/'+item._id method='post')
-              a.menuitem(href='/rahsazimadani/excavator/hundai/show/'+ item._id style='text-decoration: none; margin-right: 2%;') show
-              button.btn-danger.linkbutton(type='submit' style='width: 20%; height: 30px; padding: 0px; margin-left: 2%;') delete
+              a.menuitem(href='/workbench/show/'+ item._id style='text-decoration: none; margin-right: 2%;') نمایش
+              button.btn-danger.linkbutton(type='submit' style='width: 20%; height: 30px; padding: 0px; margin-left: 2%;') حذف
       else
         tr 
           td no products found!
           td no products found!
           td no products found!
           td no products found!
-    a.btn.btn-primary(href="/rahsazimadani/excavator/hundai/create") ایجاد محصول جدید
+    a.btn.btn-primary(href="/workbench/create") ایجاد محصول جدید
 
 
 //-     extends ../../../layout
