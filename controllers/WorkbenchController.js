@@ -111,7 +111,13 @@ workbenchController.save = (req, res, err) => {
         req.body.washerkamel,
         req.body.washersarsilandr,
         req.body.washercartel,
-        req.body.asbakdudohava
+        req.body.asbakdudohava,
+        req.body.productcode,
+        req.body.imagea,
+        req.body.imageb,
+        req.body.imagec,
+        req.body.imaged,
+        req.body.imagee
     ]
     queries.save(data)
     res.redirect('/workbench/index')
@@ -136,7 +142,7 @@ workbenchController.update = (req, res) => {
         req.params.id,
         req.body.name, 
         req.body.price, 
-        req.body.branch,
+        req.body.productbranch,
         req.body.description,
         req.body.blocksilandr,
         req.body.silandr,

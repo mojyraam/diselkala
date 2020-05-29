@@ -104,6 +104,33 @@ block content
                         label(for="asbakdudohava") اسبک دود و هوا:
                     .col-md-3.pl-5
                         input#asbakdudohava.form-control(type="text" name="asbakdudohava" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
+                    .col-md-3.pr-5
+                        label(for="productcode") کد محصول:
+                    .col-md-3.pl-5
+                        input#productcode.form-control(type="text" name="productcode" pattern=".{4,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
+                .row.mt-4.mb-4
+                    .col-md-3.pr-5
+                        label(for="imagea") عکس اول:
+                    .col-md-3.pl-5
+                        input#imagea.form-control(type="text" name="imagea" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
+                    .col-md-3.pr-5
+                        label(for="imageb") عکس دوم:
+                    .col-md-3.pl-5
+                        input#imageb.form-control(type="text" name="imageb" pattern=".{4,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
+                .row.mt-4.mb-4
+                    .col-md-3.pr-5
+                        label(for="imagec") عکس سوم:
+                    .col-md-3.pl-5
+                        input#imagec.form-control(type="text" name="imagec" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
+                    .col-md-3.pr-5
+                        label(for="imaged") عکس چهارم:
+                    .col-md-3.pl-5
+                        input#imaged.form-control(type="text" name="imaged" pattern=".{4,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
+                .row.mt-4.mb-4
+                    .col-md-3.pr-5
+                        label(for="imagee") عکس پنجم:
+                    .col-md-3.pl-5
+                        input#imagee.form-control(type="text" name="imagee" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
             .row.txt-center.mt-4
                 .col-md-8.mt-3
                     a.btn.ml-4.btn-warning.linkbutton(href='/workbench/index') نمایش محصولات

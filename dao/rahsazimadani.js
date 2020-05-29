@@ -30,7 +30,13 @@ exports.save = (data) => {
         washerkamel: data[17],
         washersarsilandr: data[18],
         washerkartel: data[19],
-        asbakdudohava: data[20]
+        asbakdudohava: data[20],
+        productcode: data[21],
+        imagea: data[22],
+        imageb: data[23],
+        imagec: data[24],
+        imaged: data[25],
+        imagee: data[26]
     })
     disel.save()
 }
@@ -63,7 +69,13 @@ exports.update = (data) => {
                 washerkamel: data[18],
                 washersarsilandr: data[19],
                 washerkartel: data[20],
-                asbakdudohava: data[21]
+                asbakdudohava: data[21],
+                productcode: data[21],
+                imagea: data[22],
+                imageb: data[23],
+                imagec: data[24],
+                imaged: data[25],
+                imagee: data[26]
             }
         },
     { new: true }).exec()

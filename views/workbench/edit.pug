@@ -19,9 +19,9 @@ block content
 					.col-md-3
 						input#price.form-control(type="text" name="price" required="is required" value= product.price)
 					.col-md-3
-						label(for="branch") شاخه:
+						label(for="productbranch") شاخه:
 					.col-md-3
-						input#name.form-control(type="text" name="name" required="is required" disabled value= product.productbranch)
+						input#productbranch.form-control(type="text" name="productbranch" required="is required" value= product.productbranch)
 						script.
 							console.log(!{JSON.stringify(product)})
 			.containereditdetail(style="margin-right: 100px;")
@@ -102,6 +102,33 @@ block content
 						label(for="asbakdudohava") اسبک دود و هوا:
 					.col-md-3
 						input#asbakdudohava.form-control(type="text" name="asbakdudohava" required="is required" value= product.asbakdudohava)
+					.col-md-3
+						label(for="productcode") کد محصول:
+					.col-md-3
+						input#productcode.form-control(type="text" name="productcode" required="is required" value= product.productcode)
+				.row.mt-2.mb-2.ml-5
+					.col-md-3
+						label(for="imagea") عکس اول:
+					.col-md-3
+						input#imagea.form-control(type="text" name="imagea" required="is required" value= product.imagea)
+					.col-md-3
+						label(for="imageb") عکس دوم:
+					.col-md-3
+						input#imageb.form-control(type="text" name="imageb" required="is required" value= product.imageb)
+				.row.mt-2.mb-2.ml-5
+					.col-md-3
+						label(for="imagec") عکس سوم:
+					.col-md-3
+						input#imagec.form-control(type="text" name="imagec" required="is required" value= product.imagec)
+					.col-md-3
+						label(for="imaged") عکس چهارم:
+					.col-md-3
+						input#imaged.form-control(type="text" name="imaged" required="is required" value= product.imaged)
+				.row.mt-2.mb-2.ml-5
+					.col-md-3
+						label(for="imagee") عکس پنجم:
+					.col-md-3
+						input#imagee.form-control(type="text" name="imagee" required="is required" value= product.imagee)
 			.row.mt-3(style='margin-right: 30%; text-align: center;')
-				a.btn-warning.linkbutton.mt-3(href='/workbench/index' style="margin-left: 2%;") Products List
-				button.btn-success.linkbutton.mt-3(type="submit" style="margin-left: 2%;") Update
+				a.btn-warning.linkbutton.mt-3(href='/workbench/index' style="margin-left: 2%;") بازگشت
+				button.btn-success.linkbutton.mt-3(type="submit" style="margin-left: 2%;") به روز رسانی

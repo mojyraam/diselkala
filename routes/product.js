@@ -1,15 +1,19 @@
 var express = require('express')
 var router = express.Router()
+var Products = require('../controllers/ProeductsController')
 
 /* GET home page. */
-router.get('/', function(req, res, next) { 
-    res.render('rahsazimadani/rahsazimadani')
+router.get('/a', (req, res) => { 
+    res.render('product/a')
 })
 
-router.get('/excavator', function(req, res, next) { 
-    res.render('rahsazimadani/excavator/excavator')
+router.get('/a/a1', (req, res) => { 
+    res.render('product/a/a1')
 })
 
+router.get('/a/a1/a1a', (req, res) => { 
+    Products.list(req, res)
+})
 
 
 

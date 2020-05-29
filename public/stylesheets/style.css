@@ -261,6 +261,23 @@ img#user:hover {
   text-decoration: none;
 }
 
+#productmain {
+  background-blend-mode: lighten;
+  background-color: rgba(249, 255, 220, 0.7);
+  background-size: cover;
+  transition: .5s;
+}
+
+#productmain:hover {
+  background-image: url(/images/cart.jpg) !important;
+  background-blend-mode: lighten;
+  background-color: rgba(220, 225, 247, 0.9);
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 3px 7px 15px gray inset;
+  transition: .5s;
+}
+
 #producta {
   background-image: url(/images/3.jpg);
   background-blend-mode: lighten;

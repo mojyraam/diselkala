@@ -1,0 +1,17 @@
+extends ../../../layout
+block append script
+block content
+  .container
+    h2.text-info.text-center انواع بیل مکانیکی های هیوندای
+    .row.mt-5.p-4
+      p.text-right.mt-5 ویژکی های بارز بیل مکانیکی های هیوندای
+    .row
+      ul#products
+        each item in products
+          //.itm
+          a#productmain(style="background-image: url(/images/"+item.imagea+".jpg);") #{item.name}
+            //img(src='/images/'+item.productbranch+'.jpg')
+            .row.mt-5
+            btn.btn-success.p-1.rounded سفارش قطعات
+          script.
+            console.log(!{JSON.stringify(item)})

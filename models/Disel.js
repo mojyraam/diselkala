@@ -41,40 +41,58 @@ var DiselSchema = new mongoose.Schema({
         type: String
     },
     bush: {
-       type: String 
+        type: String
     },
     ring: {
-        type: String 
+        type: String
     },
     yataghan: {
-        type: String 
+        type: String
     },
     supap: {
-        type: String 
+        type: String
     },
     seat: {
-        type: String 
+        type: String
     },
     gate: {
-        type: String 
+        type: String
     },
     waterpomp: {
-        type: String 
+        type: String
     },
     oilpomp: {
-        type: String 
+        type: String
     },
     washerkamel: {
-        type: String 
+        type: String
     },
     washersarsilandr: {
-        type: String 
+        type: String
     },
     washerkartel: {
-        type: String 
+        type: String
     },
     asbakdudohava: {
-        type: String 
+        type: String
+    },
+    productcode: {
+        type: String
+    },
+    imagea: {
+        type: String
+    },
+    imageb: {
+        type: String
+    },
+    imagec: {
+        type: String
+    },
+    imaged: {
+        type: String
+    },
+    imagee: {
+        type: String
     }
 })
 
