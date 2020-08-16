@@ -12,6 +12,7 @@ router.get('/a/a1', (req, res) => {
 })
 
 router.get('/a/a1/a1a', (req, res) => { 
+    //console.log(req.user._id)
     Products.list(req, res)
 })
 

@@ -1,29 +1,38 @@
 extends ../layout
 block append script
+  script(src='./javascripts/table.js')
 block content
   .container
-    table.table.table-striped(style='text-align: center;')
-      tr
-        th(scope='col') name
-        th(scope='col') description
-        th(scope='col') price
-        th(scope='col') operations
-      for item in products
+    table#dtBasicExample.table.table-striped(style='text-align: center;')
+      thead
         tr
-          td #{item.name}
-          td #{item.description}
-          td #{item.price}$
-          td
-            form(action='/workbench/delete/'+item._id method='post')
-              a.menuitem(href='/workbench/show/'+ item._id style='text-decoration: none; margin-right: 2%;') نمایش
-              button.btn-danger.linkbutton(type='submit' style='width: 20%; height: 30px; padding: 0px; margin-left: 2%;') حذف
-      else
-        tr 
-          td no products found!
-          td no products found!
-          td no products found!
-          td no products found!
-    a.btn.btn-primary(href="/workbench/create") ایجاد محصول جدید
+          th(scope='col') نام محصول
+          th(scope='col') توضیحات
+          th(scope='col') قیمت
+          th(scope='col') عملیات
+      tbody
+        each item in products
+          tr
+            td #{item.name}
+            td #{item.description}
+            td #{item.price} تومان
+            td
+              form(action='/workbench/delete/'+item._id method='post')
+                .row
+                  .col-md-3.mt-1
+                    a.menuitem.p-2.btn-sm(href='/workbench/show/'+ item._id) نمایش
+                  .col-md-2
+                    button.btn-danger.btn-sm.linkbutton(type='submit' style="width: 50px;") حذف
+        else
+          tbody
+            tr 
+              td هیچ محصولی یافت نشد!
+              td هیچ محصولی یافت نشد!
+              td هیچ محصولی یافت نشد!
+              td هیچ محصولی یافت نشد!
+    .row
+      .col-md-0
+        a.btn.btn-success.mt-5(href="/workbench/create") ایجاد محصول جدید
 
 
 //-     extends ../../../layout

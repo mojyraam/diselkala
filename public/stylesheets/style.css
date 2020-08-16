@@ -21,9 +21,9 @@ p {
   user-select: none;
   width: 90%;
   margin-left: 5%;
-  background-color: rgb(252, 233, 250);
+  background-color: rgb(234, 202, 84);
   border-radius: 7px;
-  border: 2px solid rgb(170, 207, 255);
+  border: 2px solid rgb(248, 151, 151);
 }
 
 .navlink {
@@ -80,11 +80,12 @@ p {
 
 th {
   border: none !important;
-  color: purple;
+  color: rgb(185, 194, 65);
+  background-color: black;
 }
 
 td {
-  border: 2px dashed rgb(218, 110, 185) !important;
+  border: 2px solid rgb(178, 178, 182) !important;
   transition: background-color .5s;
   color: gray;
 }
@@ -316,4 +317,58 @@ img#user:hover {
 
 .welcome:hover {
   background-color: rgb(210, 233, 236);
+}
+
+.dataTables_paginate {
+  margin-top: 3% !important;
+  margin-right: 10% !important;
+  float: right !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  padding : 5px;
+  margin-left: 0px;
+  display: inline;
+  border: 0px;
+}
+
+.pagination {
+  display: inline-block;
+  margin-left: 50% !important;
+  margin-top: -12% !important;
+}
+
+.pagination a {
+  color: red;
+  float: right;
+  text-decoration: none;
+}
+
+.pagination li.active a{
+  font-weight: bold;
+  color: rgb(69, 124, 62);
+  background-color: rgb(195, 231, 245);
+  border-radius: 5px;
+}
+
+.dataTables_info {
+  float: right !important;
+  direction: rtl !important;
+}
+
+.search {
+  margin-left: 80%;
+  margin-bottom: 0;
+}
+
+.dataTables_filter input {
+  margin-right: 10px !important;
+}
+
+.dataTables_length {
+  margin-right: 50%;
+}
+
+.dataTables_length select{
+  margin: 0px;
 }

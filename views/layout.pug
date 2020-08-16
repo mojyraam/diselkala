@@ -3,10 +3,19 @@ html
   head
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="stylesheet", href='/stylesheets/bootstrap.min.css')
+    //link(rel="stylesheet", href='/stylesheets/dataTables.bootstrap.min.css')
+    link(rel="stylesheet", href='https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css')
+    link(rel="stylesheet", href='/stylesheets/responsive.bootstrap.min.css')
     block script
       script(src='./javascripts/jquery-3.4.1.min.js')
-      script(src='./javascripts/bootstrap.min.js')
+      script(src='./javascripts/bootstrap-boundle.min.js')
+      script(src='./javascripts/jquery-1.12.3.js')
+      //script(src='./javascripts/bootstrap.min.js')
       script(src='./javascripts/test-script.js')
+      //script(src='./javascripts/dataTables.bootstrap.min.js')
+      script(src='https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js')
+      script(src='https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js')
+
 
   body.bodycolor
     block content

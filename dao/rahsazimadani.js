@@ -70,12 +70,12 @@ exports.update = (data) => {
                 washersarsilandr: data[19],
                 washerkartel: data[20],
                 asbakdudohava: data[21],
-                productcode: data[21],
-                imagea: data[22],
-                imageb: data[23],
-                imagec: data[24],
-                imaged: data[25],
-                imagee: data[26]
+                productcode: data[22],
+                imagea: data[23],
+                imageb: data[24],
+                imagec: data[25],
+                imaged: data[26],
+                imagee: data[27]
             }
         },
     { new: true }).exec()

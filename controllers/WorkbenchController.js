@@ -160,7 +160,13 @@ workbenchController.update = (req, res) => {
         req.body.washerkamel,
         req.body.washersarsilandr,
         req.body.washercartel,
-        req.body.asbakdudohava
+        req.body.asbakdudohava,
+        req.body.productcode,
+        req.body.imagea,
+        req.body.imageb,
+        req.body.imagec,
+        req.body.imaged,
+        req.body.imagee
     ]
     queries.update(data)
     res.redirect('/workbench/index')
