@@ -1,6 +1,6 @@
 var express = require('express')
 var router = express.Router()
-var Products = require('../controllers/ProeductsController')
+var Products = require('../controllers/ProductsController')
 
 /* GET home page. */
 router.get('/a', (req, res) => { 

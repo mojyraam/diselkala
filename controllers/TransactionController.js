@@ -1,6 +1,5 @@
 var queries = require('../dao/products/transaction')
 var productQuery = require('../dao/rahsazimadani')
-//var Product = require('../models/Product')
 
 var transactionController = {}
 
@@ -42,15 +41,29 @@ transactionController.create = (req, res) => {
 // Save new product
 transactionController.save = (req, res, err) => {
     if(err) {
-        console.log(err)
+        console.log("Error:", err)
     } else {
-    data = [
-        req.body.name, 
-        req.body.description, 
-        req.body.price
-    ]
+        data = [
+            req.body.blocksilandr,
+            req.body.silandr,
+            req.body.sarsilandr,
+            req.body.millang,
+            req.body.milsupap,
+            req.body.bush,
+            req.body.ring,
+            req.body.yataghan,
+            req.body.supap,
+            req.body.seat,
+            req.body.gate,
+            req.body.waterpomp,
+            req.body.oilpomp,
+            req.body.washerkamel,
+            req.body.washersarsilandr,
+            req.body.washercartel,
+            req.body.asbakdudohava,
+        ]
     queries.save(data)
-    res.redirect('/products')
+    res.redirect('/transaction/index')
     }  
 }
 

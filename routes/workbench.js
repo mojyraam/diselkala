@@ -2,6 +2,9 @@ var express = require('express')
 var router = express.Router()
 var workbench = require('../controllers/WorkbenchController')
 
+router.get('/main', (req, res) => { 
+    res.render('../views/workbench/main');
+})
 
 router.get('/index', (req, res) => { 
     workbench.list(req, res)

@@ -5,7 +5,7 @@ body {
   font-weight: 100;
   opacity: 0.9;
   direction: rtl;
-  background-color: rgb(234, 255, 255) !important;
+  background-color: rgb(209, 209, 209) !important;
 }
 
 a {
@@ -47,8 +47,8 @@ p {
 }
 
 .navlinklistitem:hover {
-  background-color: rgb(207, 241, 207);
-  color: plum;
+  background-color: rgb(255, 200, 118);
+  color: darkred;
   transition: background-color .5s;
 }
 
@@ -76,6 +76,10 @@ p {
   color: white;
   background-color: pink;
   text-decoration: none;
+}
+
+table {
+  white-space: nowrap;
 }
 
 th {

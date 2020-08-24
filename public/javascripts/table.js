@@ -8,7 +8,7 @@ $(document).ready(function () {
             'emptyTable': 'موردی یافت نشد',
             'infoEmpty': 'موردی یافت نشد',
             'infoFiltered': '( از _MAX_ مورد )',
-            'zeroRecords': '- اطلاعات مورد نظر یافت نشد',
+            'zeroRecords': 'محصول مورد نظر یافت نشد!',
             'paginate': {
                 'previous': 'قبل',
                 'next': 'بعد'

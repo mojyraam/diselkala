@@ -1,5 +1,4 @@
 var queries = require('../dao/products/products')
-var Product = require('../models/Product')
 
 var productsController = {}
 

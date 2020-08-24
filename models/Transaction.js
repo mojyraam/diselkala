@@ -2,8 +2,6 @@ var mongoose = require('mongoose')
 
 var TransactionSchema = new mongoose.Schema({
   name: String,
-  paymenttype: Number,
-  description: String,
   price: Number,
   blocksilandr: String,
   silandr: String,
@@ -23,27 +21,21 @@ var TransactionSchema = new mongoose.Schema({
   washerkartel: String,
   asbakdudohava: String,
   productcode: String,
-  imagea: String,
-  imageb: String,
-  imagec: String,
-  imaged: String,
-  imagee: String,
-  productbranch: {
-	type: String,
-    required: true
-  },
-  producttype: {
-	type: Number,
-	default: 1
-  },
-  description: {
-	type: String,
-	required: true
+  description: String,
+  username: String,
+  address: String,
+  paymenttype: {
+    type: Number,
+    default: 1
   },
   date: {
-	type: Date,
-	default: Date.now
+	  type: Date,
+	  default: Date.now
   },
-  updated_at: { type: Date, default: Date.now }
+  updated_at: {
+    type: Date, 
+    default: Date.now 
+  }
 })
+
 module.exports = mongoose.model('Transaction', TransactionSchema)

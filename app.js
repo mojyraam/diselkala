@@ -22,7 +22,6 @@ mongoose.connect('mongodb://localhost/disel', {
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var productRouter = require('./routes/products');
 var productRouter = require('./routes/product');
 var workbenchRouter = require('./routes/workbench');
 var dashboardRouter = require('./routes/dashboard');
@@ -46,8 +45,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/products/create', express.static('public'));
-app.use('/products/show', express.static('public'));
 app.use('/product/', express.static('public'));
 app.use('/users/', express.static('public'));
 app.use('/workbench/', express.static('public'));
@@ -80,7 +77,6 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/products', productRouter);
 app.use('/product', productRouter);
 app.use('/workbench', workbenchRouter);
 app.use('/dashboard', dashboardRouter);

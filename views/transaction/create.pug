@@ -2,7 +2,7 @@ extends ../layout
 block append script
 block content
 	.container
-		form(method='POST' action='/transaction/create')
+		form(method='POST' action='/transaction/save')
 			#demo.carousel.slide(data-ride='carousel')
 					// Indicators
 					ul.carousel-indicators
@@ -25,32 +25,77 @@ block content
 						span.carousel-control-prev-icon
 					a.carousel-control-next(href='#demo' data-slide='next')
 						span.carousel-control-next-icon
-			.containerinfo
-				.row.mt-2.mb-2
-					.col-md-3.pr-5
-						label(for="name") نام:
-					.col-md-3.pl-5
-						span.text-danger #{product.name}
-					.col-md-3.pr-5
-						label(for="branch") کد محصول:
-					.col-md-3.pl-5
-						span.text-danger #{product.productcode}
-				.row.mt-2.mb-2
-					.col-md-3.pr-5
-						label(for="description") توضیحات:
-					.col-md-9.pl-5
-						p.text-danger.text-center #{product.description}
-					br
-					br
-					br
-					br
-				p.text-center مشخصات قطعات
-				.container
-					.row.mt-2.mb-2
-						.col-md-3.pl-5
-							label(for="blocksilandrinfo") بلوک سیلندر
-						.col-md-3.pl-5
-							p.text-danger #{product.blocksilandr}
+			.containerinfo.text-center
+				//- .row.mt-2.mb-2
+				//- 	.col-md-3.pr-5
+				//- 		label(for="name") نام:
+				//- 	.col-md-3.pl-5
+				//- 		span.text-danger #{product.name}
+				//- 	.col-md-3.pr-5
+				//- 		label(for="branch") کد محصول:
+				//- 	.col-md-3.pl-5
+				//- 		span.text-danger #{product.productcode}
+				//- .row.mt-2.mb-2
+				//- 	.col-md-3.pr-5
+				//- 		label(for="description") توضیحات:
+				//- 	.col-md-9.pl-5
+				//- 		p.text-danger.text-center #{product.description}
+				//- 	br
+				//- 	br
+				//- 	br
+				//- 	br
+				//- p.text-center مشخصات قطعات
+				//- .container
+				//- 	.row.mt-2.mb-2
+				//- 		.col-md-3.pl-5
+				//- 			label بلوک سیلندر:
+				//- 		.col-md-3.pl-5
+				//- 			p.text-danger #{product.blocksilandr}
+				.row
+					.col-md-12
+						p.text-danger لیست قیمت قطعات (تومان)
+				.row
+					.col-md-12
+						table.table.table-striped.table-responsive
+							thead
+								tr
+									th بلوک سیلندر
+									th سیلندر
+									th سر سیلندر
+									th میل لنگ
+									th میل سوپاپ
+									th بوش
+									th رینگ
+									th یاطاقان
+									th سوپاپ
+									th سیت
+									th گیت
+									th واتر پمپ
+									th اویل پمپ
+									th واشر کامل
+									th واشر سر سیلندر
+									th واشر کارتل
+									th اسبک دود و هوا
+
+							tbody
+								tr
+									td #{product.blocksilandr}
+									td #{product.silandr}
+									td #{product.sarsilandr}
+									td #{product.millang}
+									td #{product.milsupap}
+									td #{product.bush}									
+									td #{product.ring}
+									td #{product.yataghan}
+									td #{product.supap}
+									td #{product.seat}
+									td #{product.gate}
+									td #{product.waterpomp}
+									td #{product.oilpomp}	
+									td #{product.washerkamel}
+									td #{product.washersarsilandr}
+									td #{product.washerkartel}
+									td #{product.asbakdudohava}
 			br
 			p.text-info.text-center لطفا در صورت تمایل به سفارش، تعداد قطعات را به صورت عددی وارد نمایید
 			br
@@ -59,7 +104,7 @@ block content
 					.col-md-3.pr-5
 						label(for="blocksilandr") بلوک سیلندر:
 					.col-md-3.pl-5
-						input#blocksilandr.form-control(type="number" name="blocksilandr" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
+						input#blocksilandr.form-control(type="text" name="blocksilandr" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
 					.col-md-3.pr-5
 						label(for="silandr") سیلندر:
 					.col-md-3.pl-5
@@ -106,7 +151,7 @@ block content
 					.col-md-3.pl-5
 						input#gate.form-control(type="number" name="gate" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
 					.col-md-3.pr-5
-						label(for="waterpomp") واترپمپ:
+						label(for="waterpomp") واتر پمپ:
 					.col-md-3.pl-5
 						input#waterpomp.form-control(type="number" name="waterpomp" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
 				.row.mt-4.mb-4
