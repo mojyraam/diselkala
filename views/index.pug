@@ -13,7 +13,11 @@ block content
               li.p-2
                 .row
                   .col-md-3
-                    a.btn.menuitem(href='/users/logout') خروج
+                    a.btn.btn-success(href='/users/logout') خروج
+              li.p-2
+                .row
+                  .col-md-3
+                    a.btn.btn-success(href='/transaction/index') خرید
           script.
             console.log(!{JSON.stringify(admin)})
   else if (user === 2)
@@ -96,7 +100,7 @@ block content
   br
   .container
     ul#products
-      a#producta(href='/rahsazimadani') ماشین آلات راهسازی و معدنی
-      a#productb ماشین آلات حمل و نقل جاده ای و ترابری
-      a#productc دیزل ژنراتور (مولد برق)
-      a#productd کمپرسور
+      a#producta(href='/branches/a') ماشین آلات راهسازی و معدنی
+      a#productb(href='/branches/b') ماشین آلات حمل و نقل جاده ای و ترابری
+      a#productc(href='/branches/c') دیزل ژنراتور (مولد برق)
+      a#productd(href='/product/d') کمپرسور

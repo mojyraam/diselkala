@@ -1,6 +1,12 @@
 var Transaction = require('../../models/Transaction')
 
-exports.findall = (prod) => {
+exports.findAll = (data, prod) => {
+    Transaction.find({ 
+        email: data
+    }).exec(prod)
+}
+
+exports.findAllAdmin = (prod) => {
     Transaction.find({}).exec(prod)
 }
 
@@ -9,36 +15,38 @@ exports.findOne = (id, prod) => {
 }
 
 exports.save = (data) => {
-    var disel = new Disel({
+    var transaction = new Transaction({
         name: data[0],
-        price: data[1],
-        productbranch: data[2],
-        description: data[3],
-        blocksilandr: data[4],
-        silandr: data[5],
-        sarsilandr: data[6],
-        millang: data[7],
-        milsupap: data[8],
-        bush: data[9],
-        ring: data[10],
-        yataghan: data[11],
-        supap: data[12],
-        seat: data[13],
-        gate: data[14],
-        waterpomp: data[15],
-        oilpomp: data[16],
-        washerkamel: data[17],
-        washersarsilandr: data[18],
-        washerkartel: data[19],
-        asbakdudohava: data[20],
-        productcode: data[21],
-        imagea: data[22],
-        imageb: data[23],
-        imagec: data[24],
-        imaged: data[25],
-        imagee: data[26]
+        totalprice: data[1],
+        blocksilandr: data[2],
+        silandr: data[3],
+        sarsilandr: data[4],
+        millang: data[5],
+        milsupap: data[6],
+        bush: data[7],
+        ring: data[8],
+        yataghan: data[9],
+        supap: data[10],
+        seat: data[11],
+        gate: data[12],
+        waterpomp: data[13],
+        oilpomp: data[14],
+        washerkamel: data[15],
+        washersarsilandr: data[16],
+        washerkartel: data[17],
+        asbakdudohava: data[18],
+        productcode: data[19],
+        description: data[20],
+        username: data[21],
+        address: data[22],
+        fname: data[23],
+        family: data[24],
+        email: data[25],
+        phone: data[26],
+        tid: data[27],
+        tdate: data[28]
     })
-    disel.save()
+    transaction.save()
 }
 
 exports.edit = (id, prod) => {

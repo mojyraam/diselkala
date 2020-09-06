@@ -5,12 +5,21 @@ var transactionController = {}
 
 // show list of products
 transactionController.list = (req, res) => {
-        queries.findall((err, products) => {
+        queries.findAll(req.user.email, (err, transactions) => {
         if (err) {
             console.log('Error:', err)
+        } else {
+            res.render('../views/transaction/index', { transactions: transactions})
         }
-        else {
-            res.render('../views/products/index', { products: products })
+    })
+}
+
+transactionController.listAdmin = (req, res) => {
+    queries.findAllAdmin((err, transactions) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.render('../views/transaction/adminindex', { transactions: transactions })
         }
     })
 }
@@ -33,7 +42,12 @@ transactionController.create = (req, res) => {
             console.log("Error:", err)
         }
         else {
-            res.render('../views/transaction/create', { product: product })
+            if (req.user) {
+                console.log(req.user)
+                res.render('../views/transaction/create', { product: product, user: req.user })
+            } else {
+                res.render('../views/transaction/create', { product: product })
+            }
         }
     })
 }
@@ -44,6 +58,8 @@ transactionController.save = (req, res, err) => {
         console.log("Error:", err)
     } else {
         data = [
+            req.body.name,
+            req.body.totalprice,
             req.body.blocksilandr,
             req.body.silandr,
             req.body.sarsilandr,
@@ -59,8 +75,18 @@ transactionController.save = (req, res, err) => {
             req.body.oilpomp,
             req.body.washerkamel,
             req.body.washersarsilandr,
-            req.body.washercartel,
+            req.body.washerkartel,
             req.body.asbakdudohava,
+            req.body.productcode,
+            req.body.description,
+            req.body.username,
+            req.body.address,
+            req.body.fname,
+            req.body.family,
+            req.body.email,
+            req.body.phone,
+            req.body.random,
+            req.body.time
         ]
     queries.save(data)
     res.redirect('/transaction/index')

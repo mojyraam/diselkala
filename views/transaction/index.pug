@@ -1,0 +1,78 @@
+extends ../layout
+block append script
+block content
+    .container
+        p.text-danger.text-center اطلاعات خرید به همراه تعداد قطعات
+        table#info.table.table-striped.table-responsive
+            thead
+                tr.text-center
+                    th نام محصول
+                    th کد محصول
+                    th بلوک سیلندر
+                    th سیلندر
+                    th سر سیلندر
+                    th میل لنگ
+                    th میل سوپاپ
+                    th بوش
+                    th رینگ
+                    th یاطاقان
+                    th سوپاپ
+                    th سیت
+                    th گیت
+                    th واتر پمپ
+                    th اویل پمپ
+                    th واشر کامل
+                    th واشر سر سیلندر
+                    th واشر کارتل
+                    th اسبک دود و هوا
+                    th کد پیگیری
+                    th وضعیت پرداخت
+            tbody
+                each item in transactions
+                    tr.text-center
+                        td#name #{item.name}
+                        td#productcode #{item.productcode}
+                        td#blocksilandrinfo #{item.blocksilandr}
+                        td#silandrinfo #{item.silandr}
+                        td#sarsilandrinfo #{item.sarsilandr}
+                        td#millanginfo #{item.millang}
+                        td#milsupapinfo #{item.milsupap}
+                        td#bushinfo #{item.bush}									
+                        td#ringinfo #{item.ring}
+                        td#yataghaninfo #{item.yataghan}
+                        td#supapinfo #{item.supap}
+                        td#seatinfo #{item.seat}
+                        td#gateinfo #{item.gate}
+                        td#waterpompinfo #{item.waterpomp}
+                        td#oilpompinfo #{item.oilpomp}	
+                        td#washerkamelinfo #{item.washerkamel}
+                        td#washersarsilandrinfo #{item.washersarsilandr}
+                        td#washerkartelinfo #{item.washerkartel}
+                        td#asbakdudohavainfo #{item.asbakdudohava}
+                        td#tid #{item.tid}
+                        if (item.paymenttype === 1)
+                            td
+                                p.text-success.text-center پرداخت شده
+                        else
+                            td
+                                p.text-danger.text-center پرداخت نشده
+            //- if (item.paymenttype === 1)
+            //-     ul
+            //-         li.form-control.mt-2.mb-2.welcome
+            //-             .row.text-center
+            //-                 .col-md-4
+            //-                     p.text-success #{item.tid} :کد پیگیری
+            //-                 .col-md-4
+            //-                     p.bg-warning وضعیت: پرداخت شده
+            //-                 .col-md-4
+            //-                     a.btn.btn-info.text-white مشاهده
+            //- else
+            //-     ul
+            //-         li.form-control.mt-2.mb-2.welcome
+            //-             .row.text-center
+            //-                 .col-md-4
+            //-                     p.text-danger #{item.tid} :کد پیگیری
+            //-                 .col-md-4
+            //-                     p.bg-warning وضعیت: پرداخت نشده
+            //-                 .col-md-4
+            //-                     a.btn.btn-info.text-white مشاهده

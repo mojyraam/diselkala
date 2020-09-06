@@ -2,7 +2,7 @@ var mongoose = require('mongoose')
 
 var TransactionSchema = new mongoose.Schema({
   name: String,
-  price: Number,
+  totalprice: String,
   blocksilandr: String,
   silandr: String,
   sarsilandr: String,
@@ -24,9 +24,15 @@ var TransactionSchema = new mongoose.Schema({
   description: String,
   username: String,
   address: String,
+  fname: String,
+  family: String,
+  email: String,
+  phone: String,
+  tid: String,
+  tdate: String,
   paymenttype: {
     type: Number,
-    default: 1
+    default: 0
   },
   date: {
 	  type: Date,

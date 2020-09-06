@@ -1,5 +1,7 @@
 extends ../layout
 block append script
+	script(src='./javascripts/transaction.js')
+	script(src='./javascripts/onlynumber.js')
 block content
 	.container
 		form(method='POST' action='/transaction/save')
@@ -26,37 +28,33 @@ block content
 					a.carousel-control-next(href='#demo' data-slide='next')
 						span.carousel-control-next-icon
 			.containerinfo.text-center
-				//- .row.mt-2.mb-2
-				//- 	.col-md-3.pr-5
-				//- 		label(for="name") نام:
-				//- 	.col-md-3.pl-5
-				//- 		span.text-danger #{product.name}
-				//- 	.col-md-3.pr-5
-				//- 		label(for="branch") کد محصول:
-				//- 	.col-md-3.pl-5
-				//- 		span.text-danger #{product.productcode}
-				//- .row.mt-2.mb-2
-				//- 	.col-md-3.pr-5
-				//- 		label(for="description") توضیحات:
-				//- 	.col-md-9.pl-5
-				//- 		p.text-danger.text-center #{product.description}
-				//- 	br
-				//- 	br
-				//- 	br
-				//- 	br
-				//- p.text-center مشخصات قطعات
-				//- .container
-				//- 	.row.mt-2.mb-2
-				//- 		.col-md-3.pl-5
-				//- 			label بلوک سیلندر:
-				//- 		.col-md-3.pl-5
-				//- 			p.text-danger #{product.blocksilandr}
+				p.text-center.text-danger مشخصات اصلی محصول
+				.containeredit.mr-5
+					.row.text-center.mt-4
+						.col-md-3.pr-5
+							label(for="name") نام محصول:
+						.col-md-6.pr-5
+							p#name.text-info.bg-white #{product.name}
+							input#name(name="name" type="hidden" value=product.name)
+					.row.text-center.mt-4
+						.col-md-3.pr-5
+							label(for="productcode") کد محصول:
+						.col-md-6.pr-5
+							p#productcode.text-info.bg-white #{product.productcode}
+							input#productcode(name="productcode" type="hidden" value=product.productcode)
+					.row.text-center.mt-4
+						.col-md-3.pr-5
+							label(for="description") توضیحات محصول:
+						.col-md-6.pr-5
+							p#description.text-info.bg-white #{product.description}
+			br
+			.containerinfo.text-center
 				.row
 					.col-md-12
 						p.text-danger لیست قیمت قطعات (تومان)
 				.row
 					.col-md-12
-						table.table.table-striped.table-responsive
+						table#info.table.table-striped.table-responsive
 							thead
 								tr
 									th بلوک سیلندر
@@ -79,106 +77,148 @@ block content
 
 							tbody
 								tr
-									td #{product.blocksilandr}
-									td #{product.silandr}
-									td #{product.sarsilandr}
-									td #{product.millang}
-									td #{product.milsupap}
-									td #{product.bush}									
-									td #{product.ring}
-									td #{product.yataghan}
-									td #{product.supap}
-									td #{product.seat}
-									td #{product.gate}
-									td #{product.waterpomp}
-									td #{product.oilpomp}	
-									td #{product.washerkamel}
-									td #{product.washersarsilandr}
-									td #{product.washerkartel}
-									td #{product.asbakdudohava}
-			br
-			p.text-info.text-center لطفا در صورت تمایل به سفارش، تعداد قطعات را به صورت عددی وارد نمایید
-			br
-			.containerinfo
-				.row.mt-4.mb-4
-					.col-md-3.pr-5
-						label(for="blocksilandr") بلوک سیلندر:
-					.col-md-3.pl-5
-						input#blocksilandr.form-control(type="text" name="blocksilandr" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
-					.col-md-3.pr-5
-						label(for="silandr") سیلندر:
-					.col-md-3.pl-5
-						input#silandr.form-control(type="number" name="silandr" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
-				.row.mt-4.mb-4
-					.col-md-3.pr-5
-						label(for="sarsilandr") سر سیلندر:
-					.col-md-3.pl-5
-						input#sarsilandr.form-control(type="number" name="sarsilandr" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
-					.col-md-3.pr-5
-						label(for="millang") میل لنگ:
-					.col-md-3.pl-5
-						input#millang.form-control(type="number" name="millang" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
-				.row.mt-4.mb-4
-					.col-md-3.pr-5
-						label(for="milsupap") میل سوپاپ:
-					.col-md-3.pl-5
-						input#milsupap.form-control(type="number" name="milsupap" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
-					.col-md-3.pr-5
-						label(for="bush") بوش:
-					.col-md-3.pl-5
-						input#bush.form-control(type="number" name="bush" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
-				.row.mt-4.mb-4
-					.col-md-3.pr-5
-						label(for="ring") رینگ:
-					.col-md-3.pl-5
-						input#ring.form-control(type="number" name="ring" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
-					.col-md-3.pr-5
-						label(for="yataghan") یاطاقان:
-					.col-md-3.pl-5
-						input#yataghan.form-control(type="number" name="yataghan" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
-				.row.mt-4.mb-4
-					.col-md-3.pr-5
-						label(for="supap") سوپاپ:
-					.col-md-3.pl-5
-						input#supap.form-control(type="number" name="supap" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
-					.col-md-3.pr-5
-						label(for="seat") سیت:
-					.col-md-3.pl-5
-						input#seat.form-control(type="number" name="seat" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
-				.row.mt-4.mb-4
-					.col-md-3.pr-5
-						label(for="gate") گیت:
-					.col-md-3.pl-5
-						input#gate.form-control(type="number" name="gate" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
-					.col-md-3.pr-5
-						label(for="waterpomp") واتر پمپ:
-					.col-md-3.pl-5
-						input#waterpomp.form-control(type="number" name="waterpomp" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
-				.row.mt-4.mb-4
-					.col-md-3.pr-5
-						label(for="oilpomp") اویل پمپ:
-					.col-md-3.pl-5
-						input#oilpomp.form-control(type="number" name="oilpomp" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
-					.col-md-3.pr-5
-						label(for="washerkamel") واشر کامل:
-					.col-md-3.pl-5
-						input#washerkamel.form-control(type="number" name="washerkamel" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
-				.row.mt-4.mb-4
-					.col-md-3.pr-5
-						label(for="washersarsilandr") واشر سر سیلندر:
-					.col-md-3.pl-5
-						input#washersarsilandr.form-control(type="number" name="washersarsilandr" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
-					.col-md-3.pr-5
-						label(for="washercartel") واشر کارتل:
-					.col-md-3.pl-5
-						input#washercartel.form-control(type="number" name="washercartel" pattern=".{6,}" required="is required" oninvalid="setCustomValidity('at least 6 characters is required')" oninput="setCustomValidity('')" maxlength="10")
-				.row.mt-4.mb-4
-					.col-md-3.pr-5
-						label(for="asbakdudohava") اسبک دود و هوا:
-					.col-md-3.pl-5
-						input#asbakdudohava.form-control(type="number" name="asbakdudohava" required="is required" oninvalid="this.setCustomValidity('Please Enter Product Description')" oninput="setCustomValidity('')" maxlength="50")
-			.row.txt-center.mt-4
-				.col-md-7.mt-3
-					button.btn.btn-success.linkbutton(type="submit") ثبت سفارش
-			script.
-				console.log(!{JSON.stringify(product)})
+									td#blocksilandrinfo #{product.blocksilandr}
+									td#silandrinfo #{product.silandr}
+									td#sarsilandrinfo #{product.sarsilandr}
+									td#millanginfo #{product.millang}
+									td#milsupapinfo #{product.milsupap}
+									td#bushinfo #{product.bush}									
+									td#ringinfo #{product.ring}
+									td#yataghaninfo #{product.yataghan}
+									td#supapinfo #{product.supap}
+									td#seatinfo #{product.seat}
+									td#gateinfo #{product.gate}
+									td#waterpompinfo #{product.waterpomp}
+									td#oilpompinfo #{product.oilpomp}	
+									td#washerkamelinfo #{product.washerkamel}
+									td#washersarsilandrinfo #{product.washersarsilandr}
+									td#washerkartelinfo #{product.washerkartel}
+									td#asbakdudohavainfo #{product.asbakdudohava}
+			if (user)
+				br
+				p.text-info.text-center لطفا در صورت تمایل به سفارش، تعداد قطعات را به صورت عددی وارد نمایید
+				br
+				.containerinfo
+					.row.mt-4.mb-4
+						.col-md-3.pr-5
+							label(for="blocksilandr") بلوک سیلندر:
+						.col-md-3.pl-5
+							input#blocksilandr.form-control.payel(type="text" name="blocksilandr" maxlength="3" onkeypress="return isNumber(event)")
+						.col-md-3.pr-5
+							label(for="silandr") سیلندر:
+						.col-md-3.pl-5
+							input#silandr.form-control.payel(type="text" name="silandr" maxlength="3")
+					.row.mt-4.mb-4
+						.col-md-3.pr-5
+							label(for="sarsilandr") سر سیلندر:
+						.col-md-3.pl-5
+							input#sarsilandr.form-control.payel(type="text" name="sarsilandr" maxlength="3")
+						.col-md-3.pr-5
+							label(for="millang") میل لنگ:
+						.col-md-3.pl-5
+							input#millang.form-control.payel(type="text" name="millang" maxlength="3")
+					.row.mt-4.mb-4
+						.col-md-3.pr-5
+							label(for="milsupap") میل سوپاپ:
+						.col-md-3.pl-5
+							input#milsupap.form-control.payel(type="text" name="milsupap" maxlength="3")
+						.col-md-3.pr-5
+							label(for="bush") بوش:
+						.col-md-3.pl-5
+							input#bush.form-control.payel(type="text" name="bush" maxlength="3")
+					.row.mt-4.mb-4
+						.col-md-3.pr-5
+							label(for="ring") رینگ:
+						.col-md-3.pl-5
+							input#ring.form-control.payel(type="text" name="ring" maxlength="3")
+						.col-md-3.pr-5
+							label(for="yataghan") یاطاقان:
+						.col-md-3.pl-5
+							input#yataghan.form-control.payel(type="text" name="yataghan" maxlength="3")
+					.row.mt-4.mb-4
+						.col-md-3.pr-5
+							label(for="supap") سوپاپ:
+						.col-md-3.pl-5
+							input#supap.form-control.payel(type="text" name="supap" maxlength="3")
+						.col-md-3.pr-5
+							label(for="seat") سیت:
+						.col-md-3.pl-5
+							input#seat.form-control.payel(type="text" name="seat" maxlength="3")
+					.row.mt-4.mb-4
+						.col-md-3.pr-5
+							label(for="gate") گیت:
+						.col-md-3.pl-5
+							input#gate.form-control.payel(type="text" name="gate" maxlength="3")
+						.col-md-3.pr-5
+							label(for="waterpomp") واتر پمپ:
+						.col-md-3.pl-5
+							input#waterpomp.form-control.payel(type="text" name="waterpomp" maxlength="3")
+					.row.mt-4.mb-4
+						.col-md-3.pr-5
+							label(for="oilpomp") اویل پمپ:
+						.col-md-3.pl-5
+							input#oilpomp.form-control.payel(type="text" name="oilpomp" maxlength="3")
+						.col-md-3.pr-5
+							label(for="washerkamel") واشر کامل:
+						.col-md-3.pl-5
+							input#washerkamel.form-control.payel(type="text" name="washerkamel" maxlength="3")
+					.row.mt-4.mb-4
+						.col-md-3.pr-5
+							label(for="washersarsilandr") واشر سر سیلندر:
+						.col-md-3.pl-5
+							input#washersarsilandr.form-control.payel(type="text" name="washersarsilandr" maxlength="3")
+						.col-md-3.pr-5
+							label(for="washercartel") واشر کارتل:
+						.col-md-3.pl-5
+							input#washerkartel.form-control.payel(type="text" name="washerkartel" maxlength="3")
+					.row.mt-4.mb-4
+						.col-md-3.pr-5
+							label(for="asbakdudohava") اسبک دود و هوا:
+						.col-md-3.pl-5
+							input#asbakdudohava.form-control.payel(type="text" name="asbakdudohava" maxlength="3")
+					.containeredit.mr-5
+						p.text-danger.text-center مشخصات سفارش دهنده
+						.row.text-center.mt-4
+							.col-md-3.pr-5
+								label(for="fname") نام:
+							.col-md-6.pr-5
+								p#fname.text-info.bg-white #{user.name}
+								input#fname(name="fname" type="hidden" value=user.name)
+						.row.text-center.mt-4
+							.col-md-3.pr-5
+								label(for="family") نام خانوادگی:
+							.col-md-6.pr-5
+								p#family.text-info.bg-white #{user.family}
+								input#family(name="family" type="hidden" value=user.family)
+						.row.text-center.mt-4
+							.col-md-3.pr-5
+								label(for="email") ایمیل:
+							.col-md-6.pr-5
+								p#email.text-info.bg-white #{user.email}
+								input#email(name="email" type="hidden" value=user.email)
+								input#username(name="username" type="hidden" value=user.username)
+						.row.text-center.mt-4
+							.col-md-3.pr-5
+								label(for="phone") شماره تماس:
+							.col-md-6.pr-5
+								input#phone.form-control(name="phone" type="text" required="is required" oninvalid="this.setCustomValidity('ثبت شماره تماس الزامی است')" oninput="setCustomValidity('')")
+						.row.text-center.mt-4
+							.col-md-3.pr-5
+								label(for="address") ادرس تحویل سفارش:
+							.col-md-6.pr-5
+								textarea#address.form-control(name="address" required="is required" oninvalid="this.setCustomValidity('ثبت ادرس الزامی است')" oninput="setCustomValidity('')")
+				.row.txt-center.mt-4
+					.col-md-7.mt-3
+						p.btn.text-success.bg-warning(type="text") مبلغ سفارش شما ( تومان) :
+						|
+						p#summary.btn.text-success(type="text")
+						input#totalprice(name="totalprice" type="hidden")
+						input#random(name="random" type="hidden")
+						input#time(name="time" type="hidden")
+				.row.txt-center.mt-4
+					.col-md-7.mt-3
+						button.btn.btn-success.linkbutton(type="submit") ثبت سفارش
+					//- script.
+					//- 	console.log(!{JSON.stringify(product)})
+			else
+				p.text-center.text-danger.mt-4 لطفا جهت سفارش قطعات ابتدا در صفحه اصلی وارد حساب کاربری خود شوید

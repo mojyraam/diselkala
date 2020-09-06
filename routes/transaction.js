@@ -7,6 +7,10 @@ router.get('/index', (req, res) => {
     transaction.list(req, res)
 })
 
+router.get('/adminindex', (req, res) => { 
+    transaction.listAdmin(req, res)
+})
+
 router.get('/show/:id', (req, res) => {
     transaction.show(req, res)
 })

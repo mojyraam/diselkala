@@ -1,0 +1,32 @@
+extends ../layout
+block append script
+block content
+    .container
+        p.text-danger.text-center اطلاعات خرید به همراه تعداد قطعات
+        table#info.table.table-striped
+            thead
+                tr.text-center
+                    th ایمیل سفارش دهنده
+                    th نام محصول
+                    th کد محصول
+                    th قیمت نهایی
+                    th کد پیگیری
+                    th وضعیت پرداخت
+                    th عمللیات
+            tbody
+                each item in transactions
+                    tr.text-center
+                        td#email #{item.email}
+                        td#name #{item.name}
+                        td#name #{item.productcode}
+                        td#totalprice #{item.totalprice}
+                        td#tid #{item.tid}
+                        if (item.paymenttype === 1)
+                            td
+                                p.text-success.text-center پرداخت شده
+                        else
+                            td
+                                p.text-danger.text-center پرداخت نشده
+                        td
+                            .row
+                                a.btn.btn-info.text-white.mr-3 مشاهده

@@ -26,6 +26,7 @@ var productRouter = require('./routes/product');
 var workbenchRouter = require('./routes/workbench');
 var dashboardRouter = require('./routes/dashboard');
 var trasactionRouter = require('./routes/transaction');
+var branchesRouter = require('./routes/branches');
 
 var app = express();
 
@@ -51,6 +52,7 @@ app.use('/workbench/', express.static('public'));
 app.use('/dashboard', express.static('public'));
 app.use('/transaction', express.static('public'));
 app.use('/transaction/create', express.static('public'));
+app.use('/branches/', express.static('public'));
 
 
 // Express session
@@ -81,6 +83,7 @@ app.use('/product', productRouter);
 app.use('/workbench', workbenchRouter);
 app.use('/dashboard', dashboardRouter);
 app.use('/transaction', trasactionRouter);
+app.use('/branches', branchesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
