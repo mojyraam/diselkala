@@ -1,5 +1,6 @@
 extends ../layout
 block append script
+	script(src='./javascripts/comma.js')
 block content
 	.container
 		form(method='post' action='/workbench/update/'+ product._id)
@@ -8,11 +9,11 @@ block content
 					.col-md-3
 						label(for="name") نام محصول:
 					.col-md-3
-						input#name.form-control(type="text" name="name" required="is required" value= product.name)
+						input#name.form-control(name="name" required="is required" value= product.name)
 					.col-md-3
 						label(for="description") توضیحات:
 					.col-md-3
-						input#description.form-control(type="text" name="description" required="is required" value= product.description)
+						input#description.form-control(name="description" required="is required" value= product.description)
 				.row.mt-2.mb-2.ml-5
 					.col-md-3
 						label(for="price") قیمت:

@@ -57,14 +57,14 @@ exports.update = (data) => {
     Transaction.findByIdAndUpdate({ _id: data[0] },
         { $set: 
             { 
-                name: data[1], 
-                description: data[2], 
-                price: data[3]
+                address: data[1], 
+                totalprice: data[2],
+                paymenttype: data[3]
             }
         },
     { new: true }).exec()
 }
 
-exports.delete = (id) => {
-    Transaction.deleteOne({ _id: id }).exec()
-}
+// exports.delete = (id) => {
+//     Transaction.deleteOne({ _id: id }).exec()
+// }

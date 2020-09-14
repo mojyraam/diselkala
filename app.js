@@ -49,9 +49,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/product/', express.static('public'));
 app.use('/users/', express.static('public'));
 app.use('/workbench/', express.static('public'));
+app.use('/workbench/show', express.static('public'));
+app.use('/workbench/edit', express.static('public'));
 app.use('/dashboard', express.static('public'));
 app.use('/transaction', express.static('public'));
 app.use('/transaction/create', express.static('public'));
+app.use('/transaction/adminedit', express.static('public'));
+app.use('/transaction/adminshow', express.static('public'));
 app.use('/branches/', express.static('public'));
 
 

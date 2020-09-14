@@ -26,11 +26,11 @@ transactionController.listAdmin = (req, res) => {
 
 // Show product by id
 transactionController.show = (req, res) => {
-    queries.findOne(req.params.id, (err, product) => {
+    queries.findOne(req.params.id, (err, transactions) => {
         if (err) {
             console.log('Error:', err)
         } else {
-            res.render('../views/products/show', { product: product })
+            res.render('../views/transaction/adminshow', { transactions: transactions })
         }
     }) 
 }
@@ -95,12 +95,12 @@ transactionController.save = (req, res, err) => {
 
 // Edit an employee
 transactionController.edit = (req, res) => {
-    queries.edit(req.params.id, (err, product) => {
+    queries.edit(req.params.id, (err, transactions) => {
         if (err) {
             console.log("Error:", err)
         }
         else {
-            res.render('../views/products/edit', { product: product })
+            res.render('../views/transaction/adminedit', { transactions: transactions })
         }
     })
 }
@@ -109,18 +109,18 @@ transactionController.edit = (req, res) => {
 transactionController.update = (req, res) => {
     data = [
         req.params.id,
-        req.body.name,
-        req.body.description,
-        req.body.price
+        req.body.address,
+        req.body.totalprice,
+        req.body.paymenttype
     ]
     queries.update(data)
-    res.redirect('/products')
+    res.redirect('/transaction/adminindex')
 }
 
 // Delete an employee
-transactionController.delete = (req, res) => {
-    queries.delete(req.params.id)
-    res.redirect('/products')
-}
+// transactionController.delete = (req, res) => {
+//     queries.delete(req.params.id)
+//     res.redirect('/products')
+// }
 
 module.exports = transactionController

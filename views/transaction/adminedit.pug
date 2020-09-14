@@ -1,0 +1,26 @@
+extends ../layout
+block append script
+    script(src='./javascripts/comma.js')
+block content
+    .container
+        form(method='POST' action='/transaction/adminupdate/'+ transactions._id)
+            .containerinfo.text-center
+                p.text-center.text-danger مشخصات قابل ویرایش
+                    .row
+                        .col-md-3.pr-5
+                            label(for="address") ادرس تحویل سفارش:
+                        .col-md-6.pr-5
+                            input#address.form-control(name="address" required="is required" oninvalid="this.setCustomValidity('ثبت ادرس الزامی است')" oninput="setCustomValidity('')" value=transactions.address)
+                    .row
+                        .col-md-3.pr-5
+                            label(for="totalprice") قیمت نهایی سفارش:
+                        .col-md-6.pr-5
+                            input#totalprice.form-control(type="text" name="totalprice" required="is required" oninvalid="this.setCustomValidity('ثبت قیمت نهایی سفارش الزامی است')" oninput="setCustomValidity('')" value=transactions.totalprice)
+                    .row
+                        .col-md-3.pr-5
+                            label(for="paymenttype") وضعیت پرداخت:
+                        .col-md-6.pr-5
+                            input#paymenttype.form-control(name="paymenttype" required="is required" oninvalid="this.setCustomValidity('ثبت قیمت نهایی سفارش الزامی است')" oninput="setCustomValidity('')" value=transactions.paymenttype)
+                button.btn.btn-success.linkbutton(type="submit") به روز رسانی
+            //- script.
+            //- 	console.log(!{JSON.stringify(transactions)})

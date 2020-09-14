@@ -1,62 +1,77 @@
-extends layout
+extends layout1
 block append script
 block content
   if (user === 1)
-    .row.text-center
-      p.welcome کاربر گرامی خوش آمدید
-    .row
-      .col-md-1
-        .user
-          img#user(src='/images/user.png')
-          .userform.dropdown-menu.w-75.ml-5.pr-2
-            ul#loginlist
-              li.p-2
-                .row
-                  .col-md-3
-                    a.btn.btn-success(href='/users/logout') خروج
-              li.p-2
-                .row
-                  .col-md-3
-                    a.btn.btn-success(href='/transaction/index') خرید
-          script.
-            console.log(!{JSON.stringify(admin)})
+    //- .row.text-center
+    //-   p.welcome کاربر گرامی خوش آمدید
+    //- .row
+    //-   .col-md-1
+    //-     .user
+    //-       img#user(src='/images/user.png')
+    //-       .userform.dropdown-menu
+    //-         ul#loginlist
+    //-           li.p-2
+    //-             .row
+    //-               .col-md-3
+    //-                 a.btn.btn-success(href='/users/logout') خروج
+    //-           li.p-2
+    //-             .row
+    //-               .col-md-3
+    //-                 a.btn.btn-success(href='/transaction/index') خرید
+    //-       script.
+    //-         console.log(!{JSON.stringify(admin)})
+    .row.mt-3
+      .col-md-2
+      .col-md-8
+        p.welcome.text-center.mt-1 کاربر گرامی خوش آمدید
+        a.btn.menuitem.mr-3.mb-3.mt-1(href='/users/logout') خروج
+        a.btn.menuitem.mr-3.mb-3.mt-1(href='/transaction/index') وضعیت سفارشات
   else if (user === 2)
-    .row.text-center
-      p.welcome مدیر گرامی خوش آمدید
-    .row
-      .col-md-1
-        .user
-          img#user(src='/images/user.png')
-          .userform.dropdown-menu.w-75.ml-5.pr-2
-            ul#loginlist
-              li.mt-2.mb-2
-                .row
-                  .col-md-3
-                    a.btn.menuitem(href='/workbench/main') کارتابل
-              li.p-2
-                .row
-                  .col-md-3
-                    a.btn.menuitem(href='/users/logout') خروج
-          script.
-            console.log(!{JSON.stringify(admin)})
+    //- .row.text-center
+    //-   p.welcome مدیر گرامی خوش آمدید
+    //- .row
+    //-   .col-md-1
+    //-     .user
+    //-       img#user(src='/images/user.png')
+    //-       .userform.dropdown-menu
+    //-         ul#loginlist
+    //-           li.mt-2.mb-2
+    //-             .row
+    //-               .col-md-3
+    //-                 a.btn.menuitem(href='/workbench/main') کارتابل
+    //-           li.p-2
+    //-             .row
+    //-               .col-md-3
+    //-                 a.btn.menuitem(href='/users/logout') خروج
+    //-       script.
+    //-         console.log(!{JSON.stringify(admin)})
+    .row.mt-3
+      .col-md-2
+      .col-md-8
+        p.welcome.text-center.mt-1 مدیر گرامی خوش آمدید
+        a.btn.menuitem.mr-3.mb-3.mt-1(href='/workbench/main') کارتابل
+        a.btn.menuitem.mr-3.mb-3.mt-1(href='/users/logout') خروج
   else
-    .row.text-center
-      p.welcome میهمان گرامی خوش آمدید
-    .row
-      .col-md-1
-        .user
-          img#user(src='/images/user.png')
-          .userform.dropdown-menu.w-75.ml-5.pr-2
-            ul#loginlist
-              li.p-2
-                .row
-                  .col-md-3
-                    a.btn.menuitem(href='/users/login') ورود
-              li.p-2
-                .row
-                  .col-md-3
-                    a.btn.menuitem(href='/users/register') ایجاد
-  .container
+    //- .row.text-center
+    //-   .col-md-1
+    //-     .user
+    //-       img#user(src='/images/user.png')
+    //-       .userform.dropdown-menu
+    //-         ul#loginlist
+    //-           .row
+    //-             li
+    //-                 .col-md-1
+    //-                   a.btn.btn-info(href='/users/login') ورود
+    //-             li
+    //-                 .col-md-1
+    //-                   a.btn.btn-info(href='/users/register') ایجاد
+    .row.mt-3
+      .col-md-2
+      .col-md-8
+        p.welcome.text-center.mt-1 میهمان گرامی خوش آمدید
+        a.btn.menuitem.mr-3.mb-3.mt-1(href='/users/login') ورود
+        a.btn.menuitem.mr-3.mb-3.mt-1(href='/users/register') ایجاد حساب کاربری
+  .container(style="background-color: gray;")
     if success_msg != null
       each item in success_msg
         .alert.alert-success.alert-dismissible.fade.show(role='alert')
@@ -85,13 +100,13 @@ block content
       .carousel-inner
         .carousel-item.active
           #carousel1
-            p asdasfsdfgsdfsdfdsfsd
+            //p asdasfsdfgsdfsdfdsfsd
         .carousel-item
           #carousel2
-            p asdasfsdfgsdfsdfdsfsd
+            //p asdasfsdfgsdfsdfdsfsd
         .carousel-item
           #carousel3
-            p asdasfsdfgsdfsdfdsfsd
+            //p asdasfsdfgsdfsdfdsfsd
       // Left and right controls
       a.carousel-control-prev(href='#demo' data-slide='prev')
         span.carousel-control-prev-icon

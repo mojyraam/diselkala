@@ -2,14 +2,14 @@ extends ../layout
 block append script
 block content
     .container
-        p.text-danger.text-center اطلاعات خرید به همراه تعداد قطعات
+        p.text-danger.text-center پنل سفارشات
         table#info.table.table-striped
             thead
                 tr.text-center
                     th ایمیل سفارش دهنده
                     th نام محصول
                     th کد محصول
-                    th قیمت نهایی
+                    th  قیمت نهایی (تومان)
                     th کد پیگیری
                     th وضعیت پرداخت
                     th عمللیات
@@ -29,4 +29,5 @@ block content
                                 p.text-danger.text-center پرداخت نشده
                         td
                             .row
-                                a.btn.btn-info.text-white.mr-3 مشاهده
+                                //a.btn.btn-info.text-white.mr-3 مشاهده
+                                a.menuitem.p-2.btn-sm.mr-4(href='/transaction/adminshow/'+ item._id) نمایش

@@ -11,7 +11,7 @@ router.get('/adminindex', (req, res) => {
     transaction.listAdmin(req, res)
 })
 
-router.get('/show/:id', (req, res) => {
+router.get('/adminshow/:id', (req, res) => {
     transaction.show(req, res)
 })
 
@@ -23,16 +23,12 @@ router.post('/save', (req, res) => {
     transaction.save(req, res)
 })
 
-router.get('/edit/:id', (req, res) => {
+router.get('/adminedit/:id', (req, res) => {
     transaction.edit(req, res)
 })
 
-router.post('/update/:id', (req, res) => {
+router.post('/adminupdate/:id', (req, res) => {
     transaction.update(req, res)
 })
 
-router.post('/delete/:id', (req, res) => {
-    transaction.delete(req, res)
-})
-  
 module.exports = router;

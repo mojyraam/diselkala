@@ -1,0 +1,64 @@
+extends ../layout
+block append script
+block content
+    .container
+        p.text-danger.text-center اطلاعات سفارش به همراه تعداد قطعات
+        //- script.
+        //-     console.log(!{JSON.stringify(transactions)})
+        table#info.table.table-striped.table-responsive
+            thead
+                tr.text-center
+                    th نام محصول
+                    th کد محصول
+                    th بلوک سیلندر
+                    th سیلندر
+                    th سر سیلندر
+                    th میل لنگ
+                    th میل سوپاپ
+                    th بوش
+                    th رینگ
+                    th یاطاقان
+                    th سوپاپ
+                    th سیت
+                    th گیت
+                    th واتر پمپ
+                    th اویل پمپ
+                    th واشر کامل
+                    th واشر سر سیلندر
+                    th واشر کارتل
+                    th اسبک دود و هوا
+                    th کد پیگیری
+                    th وضعیت پرداخت
+            tbody
+                tr.text-center
+                    td#name #{transactions.name}
+                    td#productcode #{transactions.productcode}
+                    td#blocksilandrinfo #{transactions.blocksilandr}
+                    td#silandrinfo #{transactions.silandr}
+                    td#sarsilandrinfo #{transactions.sarsilandr}
+                    td#millanginfo #{transactions.millang}
+                    td#milsupapinfo #{transactions.milsupap}
+                    td#bushinfo #{transactions.bush}									
+                    td#ringinfo #{transactions.ring}
+                    td#yataghaninfo #{transactions.yataghan}
+                    td#supapinfo #{transactions.supap}
+                    td#seatinfo #{transactions.seat}
+                    td#gateinfo #{transactions.gate}
+                    td#waterpompinfo #{transactions.waterpomp}
+                    td#oilpompinfo #{transactions.oilpomp}	
+                    td#washerkamelinfo #{transactions.washerkamel}
+                    td#washersarsilandrinfo #{transactions.washersarsilandr}
+                    td#washerkartelinfo #{transactions.washerkartel}
+                    td#asbakdudohavainfo #{transactions.asbakdudohava}
+                    td#tid #{transactions.tid}
+                    if (transactions.paymenttype === 1)
+                        td
+                            p.text-success.text-center پرداخت شده
+                    else
+                        td
+                            p.text-danger.text-center پرداخت نشده
+        .row
+            .col-md-6
+                a.btn.btn-info.linkbutton.ml-2(href='/transaction/adminindex') بازگشت
+            .col-md-3
+                a.btn.btn-warning.linkbutton(href='/transaction/adminedit/'+transactions._id) ویرایش

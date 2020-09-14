@@ -1,0 +1,520 @@
+doctype html
+head
+	meta(name='viewport' content='width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes')
+	title dieselkala
+	//link(rel='stylesheet' href='css/demo.css')
+	link(rel='stylesheet' href='/stylesheets/jquery.dmenu.css')
+	style.
+			.dm-menu
+			{
+			--dm-bg: #fff;
+			--dm-logo-width: 120px;
+			--dm-item-hover-bg: #f3f3f3;
+			--dm-menu-height: 100px;
+			}
+			.dm-menu > ul > li
+			{
+			border-right: 1px solid #eee;
+			
+			}
+			.dm-menu > ul > li:first-child
+			{
+			border-left: 1px solid #eee;
+			}
+			.dm-menu > ul > li > a
+			{
+			text-decoration: none;
+			}
+			.dm-menu > ul > li > ul > li > a
+			{
+			text-decoration: none;
+			}
+			.dm-menu > ul > li > ul > li > ul > li > a
+			{
+			text-decoration: none;
+			}
+			.dm-menu > ul > li > ul > li > ul > li > ul > li > a
+			{
+			text-decoration: none;
+			display: inline-block;
+			}
+			.dm-menu > ul > li > ul > li > ul > li > ul > li > ul > li > a
+			{
+			text-decoration: none;
+			}
+	link(rel='stylesheet', href='/stylesheets/style.css')
+	link(rel="stylesheet", href='/stylesheets/bootstrap.min.css')
+	//link(rel="stylesheet", href='/stylesheets/dataTables.bootstrap.min.css')
+	link(rel="stylesheet", href='https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css')
+	link(rel="stylesheet", href='/stylesheets/responsive.bootstrap.min.css')
+	block script
+			script(src='./javascripts/jquery-3.4.1.min.js')
+			script(src='./javascripts/bootstrap-boundle.min.js')
+			script(src='./javascripts/jquery-1.12.3.js')
+			//script(src='./javascripts/bootstrap.min.js')
+			script(src='./javascripts/test-script.js')
+			//script(src='./javascripts/dataTables.bootstrap.min.js')
+			script(src='https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js')
+			script(src='https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js')
+
+			script(src='https://use.fontawesome.com/releases/v5.0.6/js/all.js')
+			script(src='http://code.jquery.com/jquery-3.2.1.min.js')
+			script(src='./javascripts/jquery.dmenu.js')
+body
+	.page
+		.header
+			.header-menu
+				.container
+					nav#menu
+						a(href='#' style='background-image: url(images/logo.png)')
+						ul
+							
+							li.SubmenuMega
+								a(href='#') حمل و نقل جاده ای و ترابری
+								ul
+									li
+										a(href='#') Lorem ipsum
+										ul
+											li
+												a(href='#') Dolor sit amet
+											li
+												a(href='#') Lorem ipsum dolor
+											li
+												a(href='#') Dolor sit amet (flyout)
+												ul
+													li
+														a(href='#') Lorem ipsum dolor
+													li
+														a(href='#') Ipsum dolor
+											li.SubSubmenuAlignRight
+												a(href='#') Lorem ipsum dolor (flyout left)
+												ul
+													li
+														a(href='#') Lorem ipsum dolor
+													li
+														a(href='#') Dolor sit amet
+									li
+										a(href='#') Dolor sit
+										ul
+											li
+												a(href='#') Dolor sit amet
+											li
+												a(href='#') Lorem ipsum dolor
+											li
+												a(href='#') Dolor sit amet (flyout)
+												ul
+													li
+														a(href='#') Lorem ipsum dolor
+													li
+														a(href='#') Ipsum dolor
+													li.SubSubmenuAlignRight
+														a(href='#') Lorem ipsum dolor (flyout left)
+														ul
+															li
+																a(href='#') Lorem ipsum dolor
+															li
+																a(href='#') Dolor sit amet
+															li
+																a(href='#') Lorem ipsum dolor
+															li
+																a(href='#') Dolor sit amet
+									li
+										a(href='#') Amet
+										ul
+											li
+												a(href='#') Link
+											li
+												a(href='#') Link
+							li.SubmenuMega.SubmenuFullwidth
+								a(href='#')
+									i.fas.fa-cogs
+									|  دیزل ژنراتور
+								ul.text-right
+									li.p-3
+										div(style='background-image: url(images/1.jpg)')
+										a(href='#') ماشین الات راهسازی معدنی
+										ul
+											li
+												a.small(href='#') لودر
+											li.SubSubmenuAlignRight.SubmenuMega
+												a.small(href='#')
+													|  غلطک
+												ul
+													li
+														a(href='#') هیوندای
+															img.mr-3(src="/images/hyundai.jpg")
+													li
+														a(href='#') کوماتسو
+															img.mr-3(src="/images/komatsu.jpg")
+											li.SubSubmenuAlignRight
+												a(href='#') Link (flyout left)
+												ul
+													li
+														a(href='#') Link
+													li
+														a(href='#') Link
+									li.p-3
+										div(style='background-image: url(images/2.jpg)')
+										a(href='#') دیزل ژنراتور
+										ul
+											li
+												a(href='#') Link
+											li
+												a(href='#') Link
+									li.p-3
+										div(style='background-image: url(images/3.jpg)')
+										a(href='#') کمپرسور ها
+										ul
+											li
+												a(href='#') Link
+											li
+												a(href='#') Link
+									li.p-3
+										div(style='background-image: url(images/3.jpg)')
+										a(href='#') کمپرسور ها
+										ul
+											li
+												a(href='#') Link
+											li
+												a(href='#') Link
+							li.IconOnly
+								a(href='#')
+									i.fab.fa-twitter
+									|  Twitter
+							li.IconOnly
+								a(href='#')
+									i.fab.fa-facebook
+									|  Facebook
+							li.IconOnly
+								a(href='#')
+									i.fab.fa-instagram
+									|  Instagram
+							li.IconOnly
+								a(href='#')
+									i.fab.fa-telegram
+									|  Telegram
+							li
+								a(href='#') صفحه اصلی
+							li
+								a(href='#') حمل و نقل جاده ای و ترابری 
+							li
+								a(href='#')
+									i.fas.fa-search
+									|  جستجوی محصولات
+								ul
+									li
+										form
+											input.form-control.mb-2(type='text')
+											input.form-control(type='submit' value='جستجو')
+							li
+								a(href='#')  درباره ما
+							li.SubmenuTabs.IconHidden
+								a(href='#')
+									i.fas.fa-home
+									|  دسته بندی محصولات
+								ul.text-right(style="direction: ltr;")
+									li.SubmenuMega
+										a(href='#') ماشین آلات راهسازی و معدنی
+										ul
+											li
+												div.rounded(style='background-image: url(images/branches/excavator.png)')
+												a(href='#') بیل مکانیکی
+												ul
+													li
+														a.small.m-1(href='#') هیوندای
+															img.ml-3(src="/images/brands/hyundai.png")
+													li
+														a.small.m-1(href='#') کوماتسو
+															img.ml-3(src="/images/brands/komatsu.png")
+													li.SubmenuMega
+														a.small.m-1(href='#') سایر برند ها
+														ul
+															li
+																a.small.m-1(href='#') زوملاین
+																	img.ml-3(src="/images/brands/zoomlion.png")
+																a.small.m-1(href='#') هپکو
+																	img.ml-3(src="/images/brands/hepco.png")
+																a.small.m-1(href='#') لیوگانگ
+																	img.ml-3(src="/images/brands/liugong.png")
+																a.small.m-1(href='#') چانگلین
+																	img.ml-3(src="/images/brands/changlin.png")
+																a.small.m-1(href='#') ایکس سی ام جی
+																	img.ml-3(src="/images/brands/xcmg.png")
+															li
+																a.small.m-1(href='#') دلتا
+																	img.ml-3(src="/images/brands/delta.png")
+																a.small.m-1(href='#') فوتون لووول
+																	img.ml-3(src="/images/brands/fotonlovol.png")
+																a.small.m-1(href='#') هلیکو
+																	img.ml-3(src="/images/brands/helico.png")
+																a.small.m-1(href='#') اس دی ال جی
+																	img.ml-3(src="/images/brands/sdlg.png")
+																a.small.m-1(href='#') سانوارد
+																	img.ml-3(src="/images/brands/sunward.png")
+															li
+																a.small.m-1(href='#') تیراژه ماشین
+																	img.ml-3(src="/images/brands/tiragemachine.png")
+																a.small.m-1(href='#') جانیانگ
+																	img.ml-3(src="/images/brands/jonyang.png")
+																a.small.m-1(href='#') ارهینو
+																	img.ml-3(src="/images/brands/rhino.png")
+																a.small.m-1(href='#') پاور پلاس
+																	img.ml-3(src="/images/brands/powerplus.png")
+													li
+											li
+												div.rounded(style='background-image: url(images/branches/loader.png)')
+												a(href='#') لودر
+												ul
+													li
+														a.small.m-1(href='#') هیوندای
+															img.ml-3(src="/images/brands/hyundai.png")
+													li
+														a.small.m-1(href='#') دلتا
+															img.ml-3(src="/images/brands/delta.png")
+													li.SubmenuMega
+														a.small.m-1(href='#') سایر برند ها
+														ul
+															li
+																a.small.m-1(href='#') هپکو
+																	img.ml-3(src="/images/brands/hepco.png")
+																a.small.m-1(href='#') هلیکو
+																	img.ml-3(src="/images/brands/helico.png")
+																a.small.m-1(href='#') نیو هلند
+																	img.ml-3(src="/images/brands/newholland.png")
+																a.small.m-1(href='#') ایکس سی ام جی
+																	img.ml-3(src="/images/brands/xcmg.png")
+															li
+																a.small.m-1(href='#') کوماتسو
+																	img.ml-3(src="/images/brands/komatsu.png")
+																a.small.m-1(href='#') چانگلین
+																	img.ml-3(src="/images/brands/changlin.png")
+																a.small.m-1(href='#') دوسان
+																	img.ml-3(src="/images/brands/doosan.png")
+																a.small.m-1(href='#') اس دی ال جی
+																	img.ml-3(src="/images/brands/sdlg.png")
+															li
+																a.small.m-1(href='#') لیوگانگ
+																	img.ml-3(src="/images/brands/liugong.png")
+											li
+												div.rounded(style='background-image: url(images/branches/grader.png)')
+												a(href='#') بلدوزر
+												ul
+													li
+														a.small.m-1(href='#') شنتویی
+															img.ml-3(src="/images/brands/shantui.png")
+													li
+														a.small.m-1(href='#') کوماتسو
+															img.ml-3(src="/images/brands/komatsu.png")
+													li.SubmenuMega
+														a.small.m-1(href='#') سایر برند ها
+														ul
+															li
+																a.small.m-1(href='#') نیو هلند
+																	img.ml-3(src="/images/brands/newholland.png")
+																a.small.m-1(href='#') تیراژه ماشین
+																	img.ml-3(src="/images/brands/tiragemachine.png")
+																a.small.m-1(href='#') چانگلین
+																	img.ml-3(src="/images/brands/changlin.png")
+																a.small.m-1(href='#') کیس کراول
+																	img.ml-3(src="/images/brands/casecrawle.png")
+															li
+																a.small.m-1(href='#') چترا دوزر
+																	img.ml-3(src="/images/brands/chetradozer.png")
+																a.small.m-1(href='#') پاور پلاس
+																	img.ml-3(src="/images/brands/powerplus.png")
+																a.small.m-1(href='#') زوملاین
+																	img.ml-3(src="/images/brands/zoomlion.png")
+																a.small.m-1(href='#') لیوگانگ
+																	img.ml-3(src="/images/brands/liugong.png")
+															li
+																a.small.m-1(href='#') اچ بی ایکس جی 
+																	img.ml-3(src="/images/brands/hbxg.png")
+																a.small.m-1(href='#') ارهینو
+																	img.ml-3(src="/images/brands/rhino.png")
+																a.small.m-1(href='#') ایس
+																	img.ml-3(src="/images/brands/ace.png")
+											li
+												div(style='background-image: url(images/2.jpg)')
+												a(href='#') غلطک
+												ul
+													li
+														a(href='#') Lorem ipsum dolor
+													li
+														a(href='#') Dolor sit amet
+													li
+														a(href='#') Lorem ipsum dolor
+													li
+														a(href='#') Dolor sit amet
+											li
+												div.rounded(style='background-image: url(images/2.jpg)')
+												a(href='#') دامپتراک
+												ul
+													li
+														a(href='#') Lorem ipsum dolor
+													li
+														a(href='#') Dolor sit amet
+													li
+														a(href='#') Lorem ipsum dolor
+													li
+														a(href='#') Dolor sit amet
+											li
+												div(style='background-image: url(images/2.jpg)')
+												a(href='#') بیلبکهو
+												ul
+													li
+														a(href='#') Lorem ipsum dolor
+													li
+														a(href='#') Dolor sit amet
+													li
+														a(href='#') Lorem ipsum dolor
+													li
+														a(href='#') Dolor sit amet
+									li.SubmenuMega
+										a(href='#') Dolor sit
+										ul
+											li.Selected
+												a(href='#') Lorem ipsum
+												ul
+													li
+														a(href='#') Lorem
+													li
+														a(href='#') Ipsum dolor dolor sit amet
+													li
+														a(href='#') Lorem ipsum dolor
+													li
+														a(href='#') Dolor sit amet
+													li
+														a(href='#') Dolor sit amet
+													li
+														a(href='#') Lorem ipsum dolor
+													li
+														a(href='#') Dolor sit amet
+											li
+												a(href='#') Dolor sit amet
+												ul
+													li
+														a(href='#') Lorem ipsum
+													li
+														a(href='#') Dolor sit
+											li
+												a(href='#') Lorem ipsum
+												ul
+													li
+														a(href='#') Lorem
+													li
+														a(href='#') Ipsum dolor dolor sit amet
+													li
+														a(href='#') Lorem ipsum dolor
+													li
+														a(href='#') Dolor sit amet
+									li
+										a(href='#') Ipsum dolor
+										ul
+											li
+												a(href='#') Lorem ipsum dolor sit
+											li
+												a(href='#') Dolor sit amet
+									li
+										a(href='#') Link
+										ul
+											li
+												a(href='#') Lorem ipsum dolor
+											li
+												a(href='#') Dolor sit amet
+											li
+												a(href='#') Lorem ipsum dolor
+												li
+													a(href='#') راهسازی معدنی
+													ul
+														li
+															a(href='#') Lorem ipsum dolor
+														li
+															a(href='#') Dolor sit amet
+														li.SubSubmenuInline
+															a(href='#') Link (with inline submenu)
+															ul
+																li
+																	a(href='#') Lorem ipsum dolor
+																li
+																	a(href='#') Dolor sit amet
+																li
+																	a(href='#') Lorem (flyout)
+																	ul
+																		li
+																			a(href='#') Lorem ipsum dolor
+																		li
+																			a(href='#') Dolor sit amet
+																		li
+																			a(href='#') Lorem ipsum dolor
+																		li
+																			a(href='#') Dolor sit amet
+														li
+															a(href='#') Lorem ipsum (flyout)
+															ul
+																li
+																	a(href='#') Lorem ipsum dolor
+																li
+																	a(href='#') Dolor sit amet
+														li.SubSubmenuAlignRight
+															a(href='#') Dolor sit amet (flyout left)
+															ul
+																li
+																	a(href='#') Lorem ipsum dolor
+																li
+																	a(href='#') Dolor sit amet
+					script.
+						$(function() {
+						$(window).resize();
+						});
+						$('#menu').dmenu({
+						menu 	: {
+						logo			: true,
+						align			: 'left'
+						},
+						item	: {
+						bg				: true,
+						border 			: false,
+						subindicator	: true,
+						fit			: [
+						{
+						items 		: null,
+						fitter 		: 'icon-hide',
+						order		: 'all'
+						},
+						{
+						items 		: null,
+						fitter 		: 'icon-only',
+						order		: 'all'
+						},
+						{
+						items 		: ':not(.dm-item_align-right)',
+						fitter 		: 'submenu',
+						order		: 'rtl'
+						},
+						{
+						items 		: ':not(.dm-item_align-right)',
+						fitter 		: 'hide',
+						order		: 'rtl'
+						}
+						]
+						},
+						submenu	: {
+						arrow			: false,
+						border			: false,
+						shadow			: true
+						},
+						subitem	: {
+						bg				: true,
+						border			: false
+						}
+						});
+			block content
+				// /container
+			// /header-menu
+			//.header-slider
+			// /header-slider
+		// /header
+		//.container
+			//h2 Some text
+			//p Some text
+		// /page
