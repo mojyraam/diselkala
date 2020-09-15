@@ -400,3 +400,13 @@ img#user:hover {
 	background: url(/images/slide.jpg) center center / cover no-repeat #eee;
 	height: 200px;
 }
+
+.zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.1) !important; /* IE 9 */
+  -webkit-transform: scale(1.1) !important; /* Safari 3-8 */
+  transform: scale(1.1) !important;
+}

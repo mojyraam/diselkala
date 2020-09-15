@@ -251,7 +251,7 @@ workbenchController.create = (req, res) => {
             },
             {
                 code: 'a6a',
-                name: 'راهسازی-دامپتراک-NHL TREEX'
+                name: 'راهسازی-دامپتراک-NHL TEREX'
             },
             {
                 code: 'a6b',
