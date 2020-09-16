@@ -306,7 +306,7 @@ workbenchController.save = (req, res, err) => {
     if(err) {
         console.log(err)
     } else {
-    data = [
+    let data = [
         req.body.name, 
         req.body.price, 
         req.body.branch,
@@ -354,7 +354,7 @@ workbenchController.edit = (req, res) => {
 
 // Update a product
 workbenchController.update = (req, res) => {
-    data = [
+    let data = [
         req.params.id,
         req.body.name, 
         req.body.price, 

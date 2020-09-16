@@ -56,7 +56,8 @@ head
 			//script(src='./javascripts/dataTables.bootstrap.min.js')
 			script(src='https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js')
 			script(src='https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js')
-
+			script(src='https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js')
+			script(src='https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js')
 			script(src='https://use.fontawesome.com/releases/v5.0.6/js/all.js')
 			script(src='http://code.jquery.com/jquery-3.2.1.min.js')
 			script(src='./javascripts/jquery.dmenu.js')
@@ -216,7 +217,7 @@ body
 										a(href='#') ماشین آلات راهسازی و معدنی
 										ul
 											li
-												div.rounded(style='background-image: url(images/branches/excavator.png)')
+												div.rounded.tilt(style='background-image: url(images/branches/excavator.png)')
 												a(href='#') بیل مکانیکی
 												ul
 													li
@@ -259,9 +260,8 @@ body
 																	img.ml-3(src="/images/brands/rhino.png")
 																a.small.m-1(href='#') پاور پلاس
 																	img.ml-3(src="/images/brands/powerplus.png")
-													li
 											li
-												div.rounded(style='background-image: url(images/branches/loader.png)')
+												div.rounded.tilt(style='background-image: url(images/branches/loader.png)')
 												a(href='#') لودر
 												ul
 													li
@@ -295,7 +295,7 @@ body
 																a.small.m-1(href='#') لیوگانگ
 																	img.ml-3(src="/images/brands/liugong.png")
 											li
-												div.rounded(style='background-image: url(images/branches/bulldozer.png)')
+												div.rounded.tilt(style='background-image: url(images/branches/bulldozer.png)')
 												a(href='#') بلدوزر
 												ul
 													li
@@ -333,7 +333,7 @@ body
 																a.small.m-1(href='#') ایس
 																	img.ml-3(src="/images/brands/ace.png")
 											li
-												div.rounded(style='background-image: url(images/branches/grader.png)')
+												div.rounded.tilt(style='background-image: url(images/branches/grader.png)')
 												a(href='#') گریدر
 												ul
 													li
@@ -367,7 +367,7 @@ body
 																a.small.m-1(href='#') ارهینو
 																	img.ml-3(src="/images/brands/rhino.png")
 											li
-												div.rounded(style='background-image: url(images/branches/qaltak.png)')
+												div.rounded.tilt(style='background-image: url(images/branches/qaltak.png)')
 												a(href='#') غلطک
 												ul
 													li
@@ -385,7 +385,7 @@ body
 																a.small.m-1(href='#') چانگلین
 																	img.ml-3(src="/images/brands/changlin.png")
 											li
-												div.rounded(style='background-image: url(images/branches/dumptruk.png)')
+												div.rounded.tilt(style='background-image: url(images/branches/dumptruk.png)')
 												a(href='#') دامپتراک
 												ul
 													li.SubmenuMega.SubSubmenuAlignRight
@@ -437,6 +437,14 @@ body
 											li.text-center
 												img.rounded(src="images/branches/compressor.png")
 												a.small.m-1(href='#') کومپرسور ها
+													//- div.p-4.bg-success.rellax(data-rellax-speed='-4')
+													//- 	p hi
+													//- br
+													//- div.p-4.bg-success.rellax(data-rellax-speed='7')
+													//- 	p hi
+													//- br
+													//- div.p-4.bg-success.rellax(data-rellax-speed='2')
+													//- 	p hi
 					script.
 						$(function() {
 						$(window).resize();
@@ -483,4 +491,15 @@ body
 						border			: false
 						}
 						});
+					script.
+						//VanillaTilt.init(document.querySelector(".tilt"), {
+						//max: 25,
+						//speed: 400
+						//});
+						VanillaTilt.init(document.querySelectorAll(".tilt"), {
+							max: 15,
+							speed: 200
+						});
+					//- script.
+					//- 	var rellax = new Rellax('.rellax');
 			block content
