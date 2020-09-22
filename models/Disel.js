@@ -5,10 +5,6 @@ var DiselSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    price: {
-        type: Number,
-        require: true
-    },
     productbranch: {
         type: String,
         required: true

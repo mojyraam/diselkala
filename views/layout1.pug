@@ -5,43 +5,67 @@ head
 	//link(rel='stylesheet' href='css/demo.css')
 	link(rel='stylesheet' href='/stylesheets/jquery.dmenu.css')
 	style.
-			.dm-menu
-			{
-			--dm-bg: #fff;
-			--dm-logo-width: 120px;
-			--dm-item-hover-bg: #f3f3f3;
-			--dm-menu-height: 100px;
-			}
-			.dm-menu > ul > li
-			{
-			border-right: 1px solid #eee;
+		.dm-menu
+		{
+		--dm-bg: #fff;
+		--dm-logo-width: 120px;
+		--dm-item-hover-bg: #f3f3f3;
+		--dm-menu-height: 100px;
+		}
+		.dm-menu > ul > li
+		{
+		border-right: 1px solid #eee;
+		
+		}
+		.dm-menu > ul > li:first-child
+		{
+		border-left: 1px solid #eee;
+		}
+		.dm-menu > ul > li > a
+		{
+		text-decoration: none;
+		}
+		.dm-menu > ul > li > ul > li > a
+		{
+		text-decoration: none;
+		}
+		.dm-menu > ul > li > ul > li > ul > li > a
+		{
+		text-decoration: none;
+		}
+		.dm-menu > ul > li > ul > li > ul > li > ul > li > a
+		{
+		text-decoration: none;
+		display: inline-block;
+		}
+		.dm-menu > ul > li > ul > li > ul > li > ul > li > ul > li > a
+		{
+		text-decoration: none;
+		}
+
+		#loader { 
+			border: 12px solid #f3f3f3; 
+			border-radius: 50%; 
+			border-top: 12px solid #444444; 
+			width: 70px; 
+			height: 70px; 
+			animation: spin 1s linear infinite; 
+		} 
 			
-			}
-			.dm-menu > ul > li:first-child
-			{
-			border-left: 1px solid #eee;
-			}
-			.dm-menu > ul > li > a
-			{
-			text-decoration: none;
-			}
-			.dm-menu > ul > li > ul > li > a
-			{
-			text-decoration: none;
-			}
-			.dm-menu > ul > li > ul > li > ul > li > a
-			{
-			text-decoration: none;
-			}
-			.dm-menu > ul > li > ul > li > ul > li > ul > li > a
-			{
-			text-decoration: none;
-			display: inline-block;
-			}
-			.dm-menu > ul > li > ul > li > ul > li > ul > li > ul > li > a
-			{
-			text-decoration: none;
-			}
+		@keyframes spin { 
+			100% { 
+				transform: rotate(360deg); 
+			} 
+		} 
+			
+		.center { 
+			position: absolute; 
+			top: 0; 
+			bottom: 0; 
+			left: 0; 
+			right: 0; 
+			margin: auto; 
+		}
 	link(rel='stylesheet', href='/stylesheets/style.css')
 	link(rel="stylesheet", href='/stylesheets/bootstrap.min.css')
 	//link(rel="stylesheet", href='/stylesheets/dataTables.bootstrap.min.css')
@@ -52,25 +76,26 @@ head
 			script(src='./javascripts/bootstrap-boundle.min.js')
 			script(src='./javascripts/jquery-1.12.3.js')
 			//script(src='./javascripts/bootstrap.min.js')
-			script(src='./javascripts/test-script.js')
+			//script(src='./javascripts/test-script.js')
 			//script(src='./javascripts/dataTables.bootstrap.min.js')
 			script(src='https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js')
 			script(src='https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js')
 			script(src='https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js')
 			script(src='https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js')
 			script(src='https://use.fontawesome.com/releases/v5.0.6/js/all.js')
-			script(src='http://code.jquery.com/jquery-3.2.1.min.js')
+			//script(src='http://code.jquery.com/jquery-3.2.1.min.js')
 			script(src='./javascripts/jquery.dmenu.js')
 body
+	#loader.center
 	.page
 		.header
-			.header-menu
+			.header-menu.mt-2.mb-4
 				.container
 					nav#menu
-						a(href='#' style='background-image: url(images/logo.png)')
+						a(href='/' style='background-image: url(images/logo.png)')
 						ul
 							li
-								a(href='#') صفحه اصلی
+								a(href='/') صفحه اصلی
 							li
 								a(href='#')
 									i.fas.fa-search
@@ -98,7 +123,15 @@ body
 								a(href='#')
 									i.fab.fa-telegram
 									|  Telegram
-							li.SubmenuMega
+							li.IconOnly
+								a(href='/users/logout')
+									i.fas.fa-user(style="color: red;")
+									|  User
+							li.IconOnly
+								a(href='/users/login')
+									i.fas.fa-user(style="color: green;")
+									|  User
+							//li.SubmenuMega
 								a(href='#') ماشین آلات راهسازی معدنی
 								ul
 									li
@@ -160,283 +193,283 @@ body
 								a(href='#')
 									i.fas.fa-cogs
 									|  دیزل ژنراتور
-								ul.text-right
-									li.p-3
-										div(style='background-image: url(images/1.jpg)')
-										a(href='#') ماشین الات راهسازی معدنی
-										ul
-											li
-												a.small(href='#') لودر
-											li.SubSubmenuAlignRight.SubmenuMega
-												a.small(href='#')
-													|  غلطک
-												ul
-													li
-														a(href='#') هیوندای
-															img.mr-3(src="/images/hyundai.jpg")
-													li
-														a(href='#') کوماتسو
-															img.mr-3(src="/images/komatsu.jpg")
-											li.SubSubmenuAlignRight
-												a(href='#') Link (flyout left)
-												ul
-													li
-														a(href='#') Link
-													li
-														a(href='#') Link
-									li.p-3
-										div(style='background-image: url(images/2.jpg)')
-										a(href='#') دیزل ژنراتور
-										ul
-											li
-												a(href='#') Link
-											li
-												a(href='#') Link
-									li.p-3
-										div(style='background-image: url(images/3.jpg)')
-										a(href='#') کمپرسور ها
-										ul
-											li
-												a(href='#') Link
-											li
-												a(href='#') Link
-									li.p-3
-										div(style='background-image: url(images/3.jpg)')
-										a(href='#') کمپرسور ها
-										ul
-											li
-												a(href='#') Link
-											li
-												a(href='#') Link
+								//- ul.text-right
+								//- 	li.p-3
+								//- 		div(style='background-image: url(images/branches/qaltak.png)')
+								//- 		a(href='#') ماشین الات راهسازی معدنی
+								//- 		ul
+								//- 			li
+								//- 				a.small(href='#') لودر
+								//- 			li.SubSubmenuAlignRight.SubmenuMega
+								//- 				a.small(href='#')
+								//- 					|  غلطک
+								//- 				ul
+								//- 					li
+								//- 						a(href='#') هیوندای
+								//- 							img.mr-3(src="/images/brands/hyundai.png")
+								//- 					li
+								//- 						a(href='#') کوماتسو
+								//- 							img.mr-3(src="/images/brands/komatsu.png")
+								//- 			li.SubSubmenuAlignRight
+								//- 				a(href='#') Link (flyout left)
+								//- 				ul
+								//- 					li
+								//- 						a(href='#') Link
+								//- 					li
+								//- 						a(href='#') Link
+								//- 	li.p-3
+								//- 		div(style='background-image: url(images/branches/qaltak.png)')
+								//- 		a(href='#') دیزل ژنراتور
+								//- 		ul
+								//- 			li
+								//- 				a(href='#') Link
+								//- 			li
+								//- 				a(href='#') Link
+								//- 	li.p-3
+								//- 		div(style='background-image: url(images/branches/qaltak.png)')
+								//- 		a(href='#') کمپرسور ها
+								//- 		ul
+								//- 			li
+								//- 				a(href='#') Link
+								//- 			li
+								//- 				a(href='#') Link
+								//- 	li.p-3
+								//- 		div(style='background-image: url(images/branches/qaltak.png)')
+								//- 		a(href='#') کمپرسور ها
+								//- 		ul
+								//- 			li
+								//- 				a(href='#') Link
+								//- 			li
+								//- 				a(href='#') Link
 							li.SubmenuTabs.IconHidden
-								a(href='#')
+								a(href='/')
 									i.fas.fa-home
 									|  دسته بندی محصولات
 								ul.text-right(style="direction: ltr;")
 									li.SubmenuMega
-										a(href='#') ماشین آلات راهسازی و معدنی
+										a(href='/branches/a') ماشین آلات راهسازی و معدنی
 										ul
 											li
 												div.rounded.tilt(style='background-image: url(images/branches/excavator.png)')
-												a(href='#') بیل مکانیکی
+												a(href='/branches/a1') بیل مکانیکی
 												ul
 													li
-														a.small.m-1(href='#') هیوندای
+														a.small.m-1(href='/product/a1a') هیوندای
 															img.ml-3(src="/images/brands/hyundai.png")
 													li
-														a.small.m-1(href='#') کوماتسو
+														a.small.m-1(href='/product/a1b') کوماتسو
 															img.ml-3(src="/images/brands/komatsu.png")
 													li.SubmenuMega
-														a.small.m-1(href='#') سایر برند ها
+														a.small.m-1(href='/branches/a1') سایر برند ها
 														ul
 															li
-																a.small.m-1(href='#') زوملاین
+																a.small.m-1(href='/product/a1c') زوملاین
 																	img.ml-3(src="/images/brands/zoomlion.png")
-																a.small.m-1(href='#') هپکو
+																a.small.m-1(href='/product/a1d') هپکو
 																	img.ml-3(src="/images/brands/hepco.png")
-																a.small.m-1(href='#') لیوگانگ
+																a.small.m-1(href='/product/a1e') لیوگانگ
 																	img.ml-3(src="/images/brands/liugong.png")
-																a.small.m-1(href='#') چانگلین
+																a.small.m-1(href='/product/a1f') چانگلین
 																	img.ml-3(src="/images/brands/changlin.png")
-																a.small.m-1(href='#') ایکس سی ام جی
+																a.small.m-1(href='/product/a1g') ایکس سی ام جی
 																	img.ml-3(src="/images/brands/xcmg.png")
 															li
-																a.small.m-1(href='#') دلتا
+																a.small.m-1(href='/product/a1h') دلتا
 																	img.ml-3(src="/images/brands/delta.png")
-																a.small.m-1(href='#') فوتون لووول
+																a.small.m-1(href='/product/a1i') فوتون لووول
 																	img.ml-3(src="/images/brands/fotonlovol.png")
-																a.small.m-1(href='#') هلیکو
+																a.small.m-1(href='/product/a1j') هلیکو
 																	img.ml-3(src="/images/brands/helico.png")
-																a.small.m-1(href='#') اس دی ال جی
+																a.small.m-1(href='/product/a1k') اس دی ال جی
 																	img.ml-3(src="/images/brands/sdlg.png")
-																a.small.m-1(href='#') سانوارد
+																a.small.m-1(href='/product/a1l') سانوارد
 																	img.ml-3(src="/images/brands/sunward.png")
 															li
-																a.small.m-1(href='#') تیراژه ماشین
+																a.small.m-1(href='/product/a1m') تیراژه ماشین
 																	img.ml-3(src="/images/brands/tiragemachine.png")
-																a.small.m-1(href='#') جانیانگ
+																a.small.m-1(href='/product/a1n') جانیانگ
 																	img.ml-3(src="/images/brands/jonyang.png")
-																a.small.m-1(href='#') ارهینو
+																a.small.m-1(href='/product/a1o') ارهینو
 																	img.ml-3(src="/images/brands/rhino.png")
-																a.small.m-1(href='#') پاور پلاس
+																a.small.m-1(href='/product/a1p') پاور پلاس
 																	img.ml-3(src="/images/brands/powerplus.png")
 											li
 												div.rounded.tilt(style='background-image: url(images/branches/loader.png)')
-												a(href='#') لودر
+												a(href='/branches/a2') لودر
 												ul
 													li
-														a.small.m-1(href='#') هیوندای
+														a.small.m-1(href='/product/a2a') هیوندای
 															img.ml-3(src="/images/brands/hyundai.png")
 													li
-														a.small.m-1(href='#') دلتا
+														a.small.m-1(href='/product/a2b') دلتا
 															img.ml-3(src="/images/brands/delta.png")
 													li.SubmenuMega
-														a.small.m-1(href='#') سایر برند ها
+														a.small.m-1(href='/branches/a2') سایر برند ها
 														ul
 															li
-																a.small.m-1(href='#') هپکو
+																a.small.m-1(href='/product/a2c') هپکو
 																	img.ml-3(src="/images/brands/hepco.png")
-																a.small.m-1(href='#') هلیکو
+																a.small.m-1(href='/product/a2d') هلیکو
 																	img.ml-3(src="/images/brands/helico.png")
-																a.small.m-1(href='#') نیو هلند
+																a.small.m-1(href='/product/a2e') نیو هلند
 																	img.ml-3(src="/images/brands/newholland.png")
-																a.small.m-1(href='#') ایکس سی ام جی
+																a.small.m-1(href='/product/a2f') ایکس سی ام جی
 																	img.ml-3(src="/images/brands/xcmg.png")
 															li
-																a.small.m-1(href='#') کوماتسو
+																a.small.m-1(href='/product/a2g') کوماتسو
 																	img.ml-3(src="/images/brands/komatsu.png")
-																a.small.m-1(href='#') چانگلین
+																a.small.m-1(href='/product/a2h') چانگلین
 																	img.ml-3(src="/images/brands/changlin.png")
-																a.small.m-1(href='#') دوسان
+																a.small.m-1(href='/product/a2i') دوسان
 																	img.ml-3(src="/images/brands/doosan.png")
-																a.small.m-1(href='#') اس دی ال جی
+																a.small.m-1(href='/product/a2j') اس دی ال جی
 																	img.ml-3(src="/images/brands/sdlg.png")
 															li
-																a.small.m-1(href='#') لیوگانگ
+																a.small.m-1(href='/product/a2k') لیوگانگ
 																	img.ml-3(src="/images/brands/liugong.png")
 											li
 												div.rounded.tilt(style='background-image: url(images/branches/bulldozer.png)')
-												a(href='#') بلدوزر
+												a(href='/branches/a3') بلدوزر
 												ul
 													li
-														a.small.m-1(href='#') شنتویی
+														a.small.m-1(href='/product/a3a') شنتویی
 															img.ml-3(src="/images/brands/shantui.png")
 													li
-														a.small.m-1(href='#') کوماتسو
+														a.small.m-1(href='/product/a3b') کوماتسو
 															img.ml-3(src="/images/brands/komatsu.png")
 													li.SubmenuMega
-														a.small.m-1(href='#') سایر برند ها
+														a.small.m-1(href='/branches/a3') سایر برند ها
 														ul
 															li
-																a.small.m-1(href='#') نیو هلند
+																a.small.m-1(href='/product/a3c') نیو هلند
 																	img.ml-3(src="/images/brands/newholland.png")
-																a.small.m-1(href='#') تیراژه ماشین
+																a.small.m-1(href='/product/a3d') تیراژه ماشین
 																	img.ml-3(src="/images/brands/tiragemachine.png")
-																a.small.m-1(href='#') چانگلین
+																a.small.m-1(href='/product/a3e') چانگلین
 																	img.ml-3(src="/images/brands/changlin.png")
-																a.small.m-1(href='#') کیس کراول
+																a.small.m-1(href='/product/a3f') کیس کراول
 																	img.ml-3(src="/images/brands/casecrawle.png")
 															li
-																a.small.m-1(href='#') چترا دوزر
+																a.small.m-1(href='/product/a3g') چترا دوزر
 																	img.ml-3(src="/images/brands/chetradozer.png")
-																a.small.m-1(href='#') پاور پلاس
+																a.small.m-1(href='/product/a3h') پاور پلاس
 																	img.ml-3(src="/images/brands/powerplus.png")
-																a.small.m-1(href='#') زوملاین
+																a.small.m-1(href='/product/a3i') زوملاین
 																	img.ml-3(src="/images/brands/zoomlion.png")
-																a.small.m-1(href='#') لیوگانگ
+																a.small.m-1(href='/product/a3j') لیوگانگ
 																	img.ml-3(src="/images/brands/liugong.png")
 															li
-																a.small.m-1(href='#') اچ بی ایکس جی 
+																a.small.m-1(href='/product/a3k') اچ بی ایکس جی 
 																	img.ml-3(src="/images/brands/hbxg.png")
-																a.small.m-1(href='#') ارهینو
+																a.small.m-1(href='/product/a3l') ارهینو
 																	img.ml-3(src="/images/brands/rhino.png")
-																a.small.m-1(href='#') ایس
+																a.small.m-1(href='/product/a3m') ایس
 																	img.ml-3(src="/images/brands/ace.png")
 											li
 												div.rounded.tilt(style='background-image: url(images/branches/grader.png)')
-												a(href='#') گریدر
+												a(href='/branches/a4') گریدر
 												ul
 													li
-														a.small.m-1(href='#') کوماتسو
+														a.small.m-1(href='/product/a4a') کوماتسو
 															img.ml-3(src="/images/brands/komatsu.png")
 													li
-														a.small.m-1(href='#') نیو هلند
+														a.small.m-1(href='/product/a4b') نیو هلند
 															img.ml-3(src="/images/brands/newholland.png")
 													li.SubmenuMega.SubSubmenuAlignRight
-														a.small.m-1(href='#') سایر برند ها
+														a.small.m-1(href='/branches/a4') سایر برند ها
 														ul
 															li
-																a.small.m-1(href='#') چانگلین
+																a.small.m-1(href='/product/a4c') چانگلین
 																	img.ml-3(src="/images/brands/changlin.png")
-																a.small.m-1(href='#') تیراژه ماشین
+																a.small.m-1(href='/product/a4d') تیراژه ماشین
 																	img.ml-3(src="/images/brands/tiragemachine.png")
-																a.small.m-1(href='#') ایکس سی ام جی
+																a.small.m-1(href='/product/a4e') ایکس سی ام جی
 																	img.ml-3(src="/images/brands/xcmg.png")
 															li
-																a.small.m-1(href='#') سانی
+																a.small.m-1(href='/product/a4f') شنتویی
 																	img.ml-3(src="/images/brands/sany.png")
-																a.small.m-1(href='#') لیوگانگ
+																a.small.m-1(href='/product/a4g') سانی
 																	img.ml-3(src="/images/brands/liugong.png")
-																a.small.m-1(href='#') شنتویی
+																a.small.m-1(href='/product/a4h') لیوگانگ
 																	img.ml-3(src="/images/brands/shantui.png")
 															li
-																a.small.m-1(href='#') ایس
+																a.small.m-1(href='/product/a4i') پاور پلاس
 																	img.ml-3(src="/images/brands/ace.png")
-																a.small.m-1(href='#') پاور پلاس
+																a.small.m-1(href='/product/a4j') ارهینو
 																	img.ml-3(src="/images/brands/powerplus.png")
-																a.small.m-1(href='#') ارهینو
+																a.small.m-1(href='/product/a4k') ایس
 																	img.ml-3(src="/images/brands/rhino.png")
 											li
 												div.rounded.tilt(style='background-image: url(images/branches/qaltak.png)')
-												a(href='#') غلطک
+												a(href='/branches/a5') غلطک
 												ul
 													li
-														a.small.m-1(href='#') دلتا
+														a.small.m-1(href='/product/a5a') دلتا
 															img.ml-3(src="/images/brands/delta.png")
 													li
-														a.small.m-1(href='#') هلیکو
+														a.small.m-1(href='/product/a5b') هلیکو
 															img.ml-3(src="/images/brands/helico.png")
 													li.SubmenuMega.SubSubmenuAlignRight
-														a.small.m-1(href='#') سایر برند ها
+														a.small.m-1(href='/branches/a5') سایر برند ها
 														ul
 															li
-																a.small.m-1(href='#') تیراژه ماشین
+																a.small.m-1(href='/product/a5c') تیراژه ماشین
 																	img.ml-3(src="/images/brands/tiragemachine.png")
-																a.small.m-1(href='#') چانگلین
+																a.small.m-1(href='/product/a5d') چانگلین
 																	img.ml-3(src="/images/brands/changlin.png")
 											li
 												div.rounded.tilt(style='background-image: url(images/branches/dumptruk.png)')
-												a(href='#') دامپتراک
+												a(href='/branches/a6') دامپتراک
 												ul
 													li.SubmenuMega.SubSubmenuAlignRight
-														a.small.m-1(href='#') سایر برند ها
+														a.small.m-1(href='/branches/a6') سایر برند ها
 														ul
 															li
-																a.small.m-1(href='#') ان اچ ال ترکس
+																a.small.m-1(href='/product/a6a') ان اچ ال ترکس
 																	img.ml-3(src="/images/brands/nhlterex.png")
-																a.small.m-1(href='#') کوماتسو
+																a.small.m-1(href='/product/a6b') کوماتسو
 																	img.ml-3(src="/images/brands/komatsu.png")
 															li
-																a.small.m-1(href='#') بلاز
+																a.small.m-1(href='/product/a6c') بلاز
 																	img.ml-3(src="/images/brands/belaz.png")
-																a.small.m-1(href='#') سانی
+																a.small.m-1(href='/product/a6d') سانی
 																	img.ml-3(src="/images/brands/sany.png")
-												a.SubSubmenuInline(href='#') بیلبکهو
+												a.SubSubmenuInline(href='/branches/a7') بیلبکهو
 												ul
 													li
-														a.small.m-1(href='#') چانگلین
+														a.small.m-1(href='/product/a7a') چانگلین
 															img.ml-3(src="/images/brands/changlin.png")
 									li.SubmenuMega
-										a(href='#') ماشین الات حمل و نقل جاده ای و ترابری
+										a(href='/branches/b') ماشین الات حمل و نقل جاده ای و ترابری
 										ul
 											li
 												img.zoom.rounded(src="images/brands/saypadiesel.png")
-												a.text-center(href='#' style="text-decoration: none;") سایپا دیزل
+												a.text-center(href='/product/b1' style="text-decoration: none;") سایپا دیزل
 											li
 												img.zoom.rounded(src="images/brands/bahmandiesel.png")
-												a.text-center(href='#' style="text-decoration: none;") بهمن دیزل
+												a.text-center(href='/product/b2' style="text-decoration: none;") بهمن دیزل
 											li
 												img.zoom.rounded(src="images/brands/karizankhodro.png")
-												a.text-center(href='#' style="text-decoration: none;") کاریزان خودرو
+												a.text-center(href='/product/b3' style="text-decoration: none;") کاریزان خودرو
 											li
 												img.zoom.rounded(src="images/brands/bmc.png")
-												a.text-center(href='#' style="text-decoration: none;") بی ام سی
+												a.text-center(href='/product/b4' style="text-decoration: none;") بی ام سی
 											li
 												img.zoom.rounded(src="images/brands/international.png")
-												a.text-center(href='#' style="text-decoration: none;") اینترنشنال
+												a.text-center(href='/product/b5' style="text-decoration: none;") اینترنشنال
 									li
-										a(href='#') دیزل ژنراتور
+										a(href='/branches/c') دیزل ژنراتور
 										ul
 											li.text-center
 												img.rounded(src="images/branches/dieselgenerator.png")
-												a.small.m-1(href='#') استامفورد
+												a.small.m-1(href='/product/c1') استامفورد
 													img.ml-3(src="/images/brands/stamford.png")
 									li
-										a(href='#') کمپرسور
+										a(href='/branches/d') کمپرسور
 										ul
 											li.text-center
 												img.rounded(src="images/branches/compressor.png")
-												a.small.m-1(href='#') کومپرسور ها
+												a.small.m-1(href='/product/d') کومپرسور ها
 													//- div.p-4.bg-success.rellax(data-rellax-speed='-4')
 													//- 	p hi
 													//- br
@@ -502,4 +535,18 @@ body
 						});
 					//- script.
 					//- 	var rellax = new Rellax('.rellax');
-			block content
+					script.
+						document.onreadystatechange = function() { 
+						if (document.readyState !== "complete") { 
+						document.querySelector( 
+						"body").style.visibility = "hidden"; 
+						document.querySelector( 
+						"#loader").style.visibility = "visible"; 
+						} else { 
+						document.querySelector( 
+						"#loader").style.display = "none"; 
+						document.querySelector( 
+						"body").style.visibility = "visible"; 
+						} 
+						};
+	block content

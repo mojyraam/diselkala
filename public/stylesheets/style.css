@@ -79,7 +79,7 @@ p {
 
 .menuitem:hover {
   color: white;
-  background-color: pink;
+  background-color: pink !important;
   text-decoration: none;
 }
 
@@ -149,18 +149,10 @@ td, th {
   border-radius: 5px;
 }
 
-.containerdetail {
-  background-color: rgb(238, 216, 230);
-  padding: 3%;
-  width: 80%;
-  margin-right: 10%;
-  border-radius: 5px;
-}
-
 .containeredit {
   background-color: rgb(255, 242, 205);
   padding: 3%;
-  width: 80%;
+  width: 100%;
   margin-left: 10%;
   margin-top: 3%;
   border-radius: 5px;
@@ -169,7 +161,7 @@ td, th {
 .containereditdetail {
   background-color: rgb(205, 255, 213);
   padding: 3%;
-  width: 80%;
+  width: 100%;
   margin-left: 10%;
   margin-top: 3%;
   border-radius: 5px;
@@ -291,7 +283,7 @@ img#user:hover {
 }
 
 #producta {
-  background-image: url(/images/3.jpg);
+  background-image: url(/images/excavator.png);
   background-blend-mode: lighten;
   background-color: rgba(249, 255, 220, 0.7);
   background-size: cover;
@@ -299,7 +291,7 @@ img#user:hover {
 }
 
 #productb {
-  background-image: url(/images/3.jpg);
+  background-image: url(/images/excavator.png);
    background-blend-mode: lighten;
   background-color: rgba(249, 255, 220, 0.7);
   background-size: cover;
@@ -394,11 +386,6 @@ img#user:hover {
 .header
 {
 	position: relative;
-}
-.header-slider
-{
-	background: url(/images/slide.jpg) center center / cover no-repeat #eee;
-	height: 200px;
 }
 
 .zoom {

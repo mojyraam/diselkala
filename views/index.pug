@@ -71,7 +71,6 @@ block content
         p.welcome.text-center.mt-1 میهمان گرامی خوش آمدید
         a.btn.menuitem.mr-3.mb-3.mt-1(href='/users/login') ورود
         a.btn.menuitem.mr-3.mb-3.mt-1(href='/users/register') ایجاد حساب کاربری
-  .container(style="background-color: gray;")
     if success_msg != null
       each item in success_msg
         .alert.alert-success.alert-dismissible.fade.show(role='alert')
@@ -90,6 +89,7 @@ block content
           p(style='text-align: center;') #{item}
           button.close(type='button' data-dismiss='alert' aria-label='Close')
             span(aria-hidden='true') &times;
+  .container(style="background-color: gray;")
     #demo.carousel.slide(data-ride='carousel')
       // Indicators
       ul.carousel-indicators
@@ -100,13 +100,22 @@ block content
       .carousel-inner
         .carousel-item.active
           #carousel1
-            //p asdasfsdfgsdfsdfdsfsd
+            .row
+              br
+              .col-md-3
+                p.bg-info.text-white.text-center محل نمایش اسلاید اول
         .carousel-item
           #carousel2
-            //p asdasfsdfgsdfsdfdsfsd
+            .row
+              br
+              .col-md-3
+                p.bg-info.text-white.text-center محل نمایش اسلاید دوم
         .carousel-item
           #carousel3
-            //p asdasfsdfgsdfsdfdsfsd
+            .row
+              br
+              .col-md-3
+                p.bg-info.text-white.text-center محل نمایش اسلاید سوم
       // Left and right controls
       a.carousel-control-prev(href='#demo' data-slide='prev')
         span.carousel-control-prev-icon

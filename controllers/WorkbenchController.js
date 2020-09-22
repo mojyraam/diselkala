@@ -308,7 +308,6 @@ workbenchController.save = (req, res, err) => {
     } else {
     let data = [
         req.body.name, 
-        req.body.price, 
         req.body.branch,
         req.body.description,
         req.body.blocksilandr,
@@ -357,7 +356,6 @@ workbenchController.update = (req, res) => {
     let data = [
         req.params.id,
         req.body.name, 
-        req.body.price, 
         req.body.productbranch,
         req.body.description,
         req.body.blocksilandr,

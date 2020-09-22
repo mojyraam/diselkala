@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
       console.log('user')
       res.render('index', {
         title: 'ex',
-        user: req.user.usertype
+        user: req.user.usertype,
       })
     } else if (req.user.usertype === 2) {
       console.log('admin')

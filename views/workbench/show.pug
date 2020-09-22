@@ -1,69 +1,150 @@
-extends ../layout
+extends ../layout1
 block append script
 block content
     .container
-        .col-md-3
-            p.text-center.mb-5.mr-5.p-4.rounded.text-info نمایش محصول
+        .col-md
+            p.text-center.mb-5.p-4.rounded.text-info نمایش محصول
         .containerinfo
+            p.text-center.text-danger عکس ها
+            .container
+                .row
+                    .col-md-2
+                    .col-md-10
+                        .row
+                            div.m-1(style="background-image: url(/images/"+product.imagea+".jpg); background-color: rgba(20, 20, 20, 0.9); border-radius: 5px; width: 15%; height: 100px; margin: auto; background-size: cover;")           
+                            div.m-1(style="background-image: url(/images/"+product.imageb+".jpg); background-color: rgba(20, 20, 20, 0.9); border-radius: 5px; width: 15%; height: 100px; margin: auto; background-size: cover;")           
+                            div.m-1(style="background-image: url(/images/"+product.imagec+".jpg); background-color: rgba(20, 20, 20, 0.9); border-radius: 5px; width: 15%; height: 100px; margin: auto; background-size: cover;")           
+                            div.m-1(style="background-image: url(/images/"+product.imaged+".jpg); background-color: rgba(20, 20, 20, 0.9); border-radius: 5px; width: 15%; height: 100px; margin: auto; background-size: cover;")           
+                            div.m-1(style="background-image: url(/images/"+product.imagee+".jpg); background-color: rgba(20, 20, 20, 0.9); border-radius: 5px; width: 15%; height: 100px; margin: auto; background-size: cover;")           
+            br
+            br
+            p.text-center.text-danger مشخصات اصلی
+            .container
+                .row.mt-5
+                    .col-md-3
+                        label نام محصول: 
+                    .col-md-3
+                        p #{product.name}
+                    .col-md-3
+                        label کد محصول:
+                    .col-md-3
+                        p #{product.productcode}
+                .row
+                hr
+                .row
+                    .col-md-3
+                        label شاخه:
+                    .col-md-3
+                        p #{product.productbranch}
+                .row
+                hr
+                .row
+                    .col-md-3
+                        label توضیحات:
+                    .col-md-9.text-center
+                        p #{product.description}
+            br
+            br
+            br
+            p.text-center.text-danger قیمت قطعات
+            .containereditdetail.text-center
+                .row.mt-5
+                    .col-md-3
+                        label بلوک سیلندر:
+                    .col-md-3
+                        p #{product.blocksilandr}
+                    hr
+                    .col-md-3
+                        label سیلندر:
+                    .col-md-3
+                        p #{product.silandr}
+                    hr
+                .row.mt-5
+                    .col-md-3
+                        label سر سیلندر:
+                    .col-md-3
+                        p #{product.sarsilandr}
+                    hr
+                    .col-md-3
+                        label میل لنگ:
+                    .col-md-3
+                        p #{product.millang}
+                    hr
+                .row.mt-5
+                    .col-md-3
+                        label میل سوپاپ:
+                    .col-md-3
+                        p #{product.milsupap}
+                    hr
+                    .col-md-3
+                        label بوش:
+                    .col-md-3
+                        p #{product.bush}
+                    hr
+                .row.mt-5
+                    .col-md-3
+                        label رینگ:
+                    .col-md-3
+                        p #{product.ring}
+                    hr
+                    .col-md-3
+                        label یاطاقان:
+                    .col-md-3
+                        p #{product.yataghan}
+                    hr
+                .row.mt-5
+                    .col-md-3
+                        label سوپاپ:
+                    .col-md-3
+                        p #{product.supap}
+                    hr
+                    .col-md-3
+                        label سیت:
+                    .col-md-3
+                        p #{product.seat}
+                    hr
+                .row.mt-5
+                    .col-md-3
+                        label گیت:
+                    .col-md-3
+                        p #{product.gate}
+                    hr
+                    .col-md-3
+                        label واترپمپ:
+                    .col-md-3
+                        p #{product.waterpomp}
+                    hr
+                .row.mt-5
+                    .col-md-3
+                        label اویل پمپ:
+                    .col-md-3
+                        p #{product.oilpomp}
+                    hr
+                    .col-md-3
+                        label واشر کامل:
+                    .col-md-3
+                        p #{product.washerkamel}
+                    hr
+                .row.mt-5
+                    .col-md-3
+                        label واشر سرسیلندر:
+                    .col-md-3
+                        p #{product.washersarsilandr}
+                    hr
+                    .col-md-3
+                        label واشر کارتل:
+                    .col-md-3
+                        p #{product.washerkartel}
+                    hr
+                .row.mt-5
+                    .col-md-3
+                        label اسبک دود و هوا:
+                    .col-md-3
+                        p #{product.asbakdudohava}
+                    hr
+                script.
+                    console.log(!{JSON.stringify(product)})
             .row.mt-5
-                .col-md-3
-                    label نام محصول: 
-                .col-md-3
-                    p #{product.name}
-                hr
-                .col-md-3
-                    label قیمت:
-                .col-md-3
-                    p #{product.price} تومان
-                hr
-            .row
-                .col-md-3
-                    label شاخه:
-                .col-md-3
-                    p #{product.productbranch}
-                hr
-            .row
-                .col-md-3
-                    label توضیحات:
-                .col-md-3
-                    p #{product.description}
-                hr
-        br
-        .containerdetail
-            .row.mt-5
-                .col-md-3
-                    label بلوک سیلندر:
-                .col-md-3
-                    p #{product.blocksilandr}
-                hr
-                .col-md-3
-                    label سیلندر:
-                .col-md-3
-                    p #{product.silandr}
-                hr
-            .row.mt-5
-                .col-md-3
-                    label سر سیلندر:
-                .col-md-3
-                    p #{product.sarsilandr}
-                hr
-                .col-md-3
-                    label میل لنگ:
-                .col-md-3
-                    p #{product.millang}
-                hr
-            .row.mt-5
-                .col-md-3
-                    label سر سیلندر:
-                .col-md-3
-                    p #{product.sarsilandr}
-                hr
-                .col-md-3
-                    label میل لنگ:
-                .col-md-3
-                    p #{product.millang}
-                hr
-        .row.mt-5
-            .col-md-8
-                a.btn.btn-info.linkbutton.ml-2(href='/workbench/index') بازگشت
-                a.btn.btn-warning.linkbutton(href='/workbench/edit/'+product._id) ویرایش
+                .col-md.text-center
+                    a.btn.btn-info.linkbutton.ml-2(href='/workbench/index') بازگشت
+                    a.btn.btn-warning.linkbutton(href='/workbench/edit/'+product._id) ویرایش
